@@ -1,0 +1,29 @@
+# Turn off beeping
+unsetopt beep
+
+# Usev Vi-like key bindings
+bindkey -v
+
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename "$HOME/.zshrc"
+
+# Enable autocompletion
+# Use menues for completion
+autoload -Uz compinit && compinit
+autoload -Uz bashcompinit && bashcompinit
+zstyle ':completion:*' menu select
+
+# auto-complete aliases
+setopt completealiases
+
+# correct bad spelling
+setopt correct
+
+# Use pushd instead of cd, whic gives some really useful option
+setopt auto_pushd
+
+#  Use the S* files
+for zshrc_snipplet in ~/.zsh.d/S[0-9][0-9]*[^~] ; do
+	source $zshrc_snipplet
+done

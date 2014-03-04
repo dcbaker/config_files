@@ -1,0 +1,43 @@
+
+[core]
+	editor = vim
+	pager = less -RS
+
+[alias]
+	cm = commit
+	cma = commit -a
+	a = add
+	amend = commit --amend
+	br = branch
+	ck = checkout
+	new = checkout -b
+	rb = rebase
+	llog = log --pretty=
+	cached = diff --cached
+	pr = pull --rebase
+	mr = merge --ff-only
+	as = rebase --interactive --autosquash
+	f = fetch
+	send = send-email --annotate
+	chp = cherry-pick
+
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = true
+
+[format]
+	pretty = oneline
+
+[user]
+	; set stuff
+
+[sendemail]
+	; set more stuff
+
+[push]
+	default = upstream
+
+; vim: ft=gitconfig

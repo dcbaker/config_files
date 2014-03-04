@@ -1,0 +1,5 @@
+# Ignore any bundles installed, and all tmp and backup files
+# backup files might contain sensitive information
+vim/bundle
+vim/backup
+vim/tmp

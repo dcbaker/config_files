@@ -1,0 +1,124 @@
+" Use vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Use vundle to manage plugins
+Bundle 'gmarik/vundle'
+Bundle "vim-scripts/sudo.vim"
+Bundle "tpope/vim-fugitive"
+Bundle "sjl/gundo.vim"
+Bundle "tmhedberg/SimpylFold"
+Bundle "scrooloose/nerdcommenter"
+Bundle "SirVer/ultisnips"
+Bundle "honza/vim-snippets"
+Bundle "Lokaltog/powerline"
+
+" Syntax
+Bundle "kurayama/systemd-vim-syntax"
+Bundle "hdima/python-syntax" 
+Bundle "tpope/vim-git"
+Bundle "elzr/vim-json" 
+Bundle "scrooloose/syntastic"
+Bundle "evanmiller/nginx-vim-syntax"
+
+" Vim colors
+Bundle "nanotech/jellybeans.vim"
+
+" Fix debian brokenness
+set rtp+=/usr/share/vim-youcompleteme
+
+" Make powerline work
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+set laststatus=2
+set background=dark				" cuz who uses light colored consoles?
+set nowrap						" in general we dont want wrap
+set nopaste						" dont screw with formatting if not pasting
+set number						" very useful
+set ruler						" ^this
+set nocompatible				" this is vim, not vi
+set modeline					" this can be a security problem, but its dang useful
+set autoindent					" who doesn't like autoindent
+set autowrite					" autowrite on next, I forget a lot
+set noexpandtab					" Don't expand tabs to spaces
+set tabstop=4					" set a resonable tabstop, 8 is not reasonable
+set shiftwidth=4				" set a reasonable shiftwidth, 8 is not reasonable
+set backspace=indent,eol,start	" make backspace work like a reasonable system
+set viminfo='20,\"50			" store only 50 lines in register
+set history=50					" keep only 50 lines of history
+set directory=~/.vim/tmp		" store temporary files in their own folder
+set hlsearch					" search with hilight
+set omnifunc=					" do not use omnifunc
+set foldmethod=syntax 			" Syntax folding by default, change it in the ftplugins
+set exrc                        " Load project .vimrc files
+set secure                      " disable unsafe commands in project .vimrc
+" create backups, but put them in a backup folder
+set backup
+set backupdir=~/.vim/backup
+" This allows for visual identification of whitespace
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+syntax on 						" turn syntax highlighting on
+filetype indent plugin on		" do indent and plugins based on filetype
+
+" Make YCM and UltriSnips live happily
+let g:UltiSnipsExpandTrigger="<Leader>i"
+let g:UltiSnipsListSnippets="<Leader>l"
+
+" Setup syntastic
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_aggregate_errors=1
+
+" syntastic python settings unfortunately we get a choice between python2
+" and python3. Default to python2, use a local .vimrc to use python3
+let g:syntastic_python_checkers=['python', 'pyflakes', 'pylint']
+let g:syntastic_python_python_exec='/usr/bin/python'
+let g:syntastic_python_pyflakes_exec='/usr/bin/pyflakes'
+let g:syntastic_python_pylint_exec='/usr/bin/pylint'
+
+" Use cool colors if it's supported by the terminal
+if &term =~ "xterm"
+	set t_Co=256 " Konsole workaround
+	set t_Sb=[4%dm
+	set t_Sf=[3%dm
+	colorscheme jellybeans
+endif
+
+" Using VIM in tmux can have some unexpected issues.
+" This attempts to fix it
+if &term == "screen-256color"
+	set t_Co=256 " Konsole workarond
+	set t_Sb=[4%dm
+	set t_Sf=[3%dm
+	map <Esc>OH <Home>
+	map! <Esc>OH <Home>
+	map <Esc>OF <End>
+	map! <Esc>OF <End>
+	colorscheme jellybeans
+endif
+
+" Change the arrow keys to navigate lines, even if they're wrapped
+" Also make end and home go to the end of lines
+map <silent> <Up> gk
+imap <silent> <Up> <C-o>gk
+map <silent> <Down> gj
+imap <silent> <Down> <C-o>gj
+map <silent> <home> g<home>
+imap <silent> <home> <C-o>g<home>
+map <silent> <End> g<End>
+imap <silent> <End> <C-o>g<End>
+
+" If it's possible switch to UTF-n encoding
+" For using larger than UTF-8 we will need the bomb (which turns on the BOM)
+" however, we don't want to use BOM on UTF-8, since script files with #!
+" will break badly with a BOM
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb " better to set this locally than globally.
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
