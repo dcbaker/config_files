@@ -1,0 +1,88 @@
+snippet writing_location
+\section({${1:Section name}}
+\label{loc:${2:label}}
+
+\begin{name}
+Name: ${3:the name of the place}
+Area: ${4: The larger area it is in}
+\end{name}
+
+\begin{desc}
+Description:
+	${5:long winded, detailed description}
+\end{desc}
+endsnippet
+
+snippet writing_character
+\section*{${1:title}} \label{char:${2:label}}
+{ \raggedright
+\begin{name}
+Name: ${3:name} 
+\linebreak
+Aliases: ${4}
+\end{name}
+
+\begin{desc}
+Importance: ${5:Importance}
+\linebreak
+Physical Description:
+\begin{itemize}
+	\item Hair: ${6}
+	\item Eyes: ${7}
+	\item Height: ${8}
+	\item Build: ${9}
+	\item Age (at start of story):
+	\item Birthday: ${10}
+\end{itemize}
+
+Traits:
+\begin{itemize}
+
+\end{itemize}
+	\item ${11}
+\end{desc}
+}
+
+Personality:
+	${12}
+\begin{bio}
+Bio:
+	${13}
+\end{bio}
+endsnippet
+
+snippet writing_history
+\section*{${1}} \label{hist:${2}}
+{ \raggedright
+Name: ${3}
+Date (or range): ${4}
+Involved groups/people: ${5}
+\begin{itemize}
+	\item ${6}
+\end{itemize}
+
+\begin{desc}
+Description:
+	${7}
+\end{desc}
+endsnippet
+
+snippet writing_scene
+\section*{${1}}
+\label{scn:${2}}
+
+Characters:
+\begin{itemize}
+	\item ${3}
+\end{itemize}
+
+Locations:
+\begin{itemize}
+	\item ${4}
+\end{itemize}
+
+\begin{desc}
+Description:
+	${5}
+\end{desc}
+endsnippet
