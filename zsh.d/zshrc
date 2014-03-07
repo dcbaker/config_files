@@ -23,7 +23,19 @@ setopt correct
 # Use pushd instead of cd, whic gives some really useful option
 setopt auto_pushd
 
-#  Use the S* files
-for zshrc_snipplet in ~/.zsh.d/S[0-9][0-9]*[^~] ; do
-	source $zshrc_snipplet
+# Load global (G), then local (L) config files.
+# Global files are checked into git, while Local files are specifically not by
+# a .gitignore file.
+for l in G L; do
+	for file in ~/.zsh.d/*; do
+		# The regex here is a little crazy, but zsh is a double edged sword:
+		# Normally placing the regex string inside '' would make everything
+		# happy, but the $l makes this impossible, so escaping a lot of
+		# characters is the only choice
+		[[ "${file}" =~ .\*/"$l"[0-9].\*\.zsh ]] && source $file
+	done
 done
+
+# If we don't return zero here the initial returncode with be 1, since some of
+# the files will fail to load
+return 0
