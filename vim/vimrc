@@ -21,6 +21,8 @@ Bundle "tpope/vim-git"
 Bundle "elzr/vim-json" 
 Bundle "scrooloose/syntastic"
 Bundle "evanmiller/nginx-vim-syntax"
+Bundle "Keithbsmiley/rspec.vim"
+Bundle "vim-scripts/mako.vim"
 
 " Vim colors
 Bundle "nanotech/jellybeans.vim"

@@ -4,6 +4,9 @@ setlocal softtabstop=2
 setlocal shiftwidth=2
 setlocal expandtab
 setlocal nowrap
-setlocal textwidth=80
+setlocal textwidth=79
 setlocal expandtab
-setlocal colorcolumn=80
+setlocal colorcolumn=79
+
+" Syntastic settings
+let g:syntastic_ruby_checkers=['mri', 'rubylint', 'rubocop']
