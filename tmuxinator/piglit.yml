@@ -24,8 +24,8 @@ windows:
   - editor:
       layout: even-horizontal
       panes:
-        -
-        -
+        - clear
+        - clear
   - build:
       layout: even-horizontal
       panes:
@@ -35,3 +35,4 @@ windows:
             - ninja install
         - install:
             - cd /tmp/piglit-install/
+            - clear
