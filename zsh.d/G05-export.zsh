@@ -7,6 +7,6 @@ export PKG_CONFIG_PATH="/usr/local/lib/x86_64-linux-gnu/pkgconfig/:$PKG_CONFIG_P
 export SSH_ASKPASS="/usr/bin/ksshaskpass"
 export LIBGL_DRIVERS_PATH="/usr/local/lib/x86_64-linux-gnu/dri:/usr/local/lib/i386-linux-gnu/dri:$LIBGL_DRIVERS_PATH"
 export LD_LIBRARY_PATH="/usr/local/lib/x86_64-linux-gnu:/usr/local/lib/i386-linux-gnu:$LD_LIBRARY_PATH"
-export GOPATH="$HOME/source/go"
+export GOPATH="$HOME/golang"
 
 # vim: ft=sh
