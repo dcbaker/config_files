@@ -23,6 +23,7 @@ Bundle "scrooloose/syntastic"
 Bundle "evanmiller/nginx-vim-syntax"
 Bundle "Keithbsmiley/rspec.vim"
 Bundle "vim-scripts/mako.vim"
+Bundle "rid9/vim-fstab"
 
 " Vim colors
 Bundle "nanotech/jellybeans.vim"
