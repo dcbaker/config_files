@@ -1,1 +1,1 @@
-let g:syntastic_go_go_exec=''
+let g:syntastic_go_checkers=['go', 'gofmt']
