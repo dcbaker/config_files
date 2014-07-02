@@ -74,13 +74,6 @@ let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 let g:syntastic_aggregate_errors=1
 
-" syntastic python settings unfortunately we get a choice between python2
-" and python3. Default to python2, use a local .vimrc to use python3
-let g:syntastic_python_checkers=['python', 'pyflakes', 'pylint']
-let g:syntastic_python_python_exec='/usr/bin/python'
-let g:syntastic_python_pyflakes_exec='/usr/bin/pyflakes'
-let g:syntastic_python_pylint_exec='/usr/bin/pylint'
-
 " Use cool colors if it's supported by the terminal
 if &term =~ "xterm"
 	set t_Co=256 " Konsole workaround
