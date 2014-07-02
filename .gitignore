@@ -3,3 +3,5 @@
 vim/bundle
 vim/backup
 vim/tmp
+vim/.netrwhist
+zsh.d/L*
