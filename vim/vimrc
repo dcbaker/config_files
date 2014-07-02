@@ -29,6 +29,8 @@ Bundle "jnwhiteh/vim-golang"
 " Vim colors
 Bundle "nanotech/jellybeans.vim"
 
+colorscheme jellybeans
+
 " Fix debian brokenness
 set rtp+=/usr/share/vim-youcompleteme
 
@@ -79,7 +81,6 @@ if &term =~ "xterm"
 	set t_Co=256 " Konsole workaround
 	set t_Sb=[4%dm
 	set t_Sf=[3%dm
-	colorscheme jellybeans
 endif
 
 " Using VIM in tmux can have some unexpected issues.
