@@ -5,7 +5,6 @@ setlocal shiftwidth=2
 setlocal expandtab
 setlocal nowrap
 setlocal textwidth=79
-setlocal expandtab
 setlocal colorcolumn=79
 
 " Syntastic settings
