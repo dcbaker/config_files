@@ -27,7 +27,7 @@ windows:
         - clear
         - clear
   - build:
-      layout: even-horizontal
+      layout: main-vertical
       panes:
         - build:
             - cd /tmp/piglit-build
