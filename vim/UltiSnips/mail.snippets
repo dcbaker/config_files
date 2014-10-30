@@ -1,0 +1,11 @@
+snippet rb
+Reviewed-by: ${1:`git config --get user.name`} <${2:`git config --get user.email`}>
+endsnippet
+
+snippet ab
+Acked-by: ${1:`git config --get user.name`} <${2:`git config --get user.email`}>
+endsnippet
+
+snippet tb
+Tested-by: ${1:`git config --get user.name`} <${2:`git config --get user.email`}>
+endsnippet
