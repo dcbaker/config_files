@@ -3,7 +3,7 @@ alias grep="grep --color=always"
 alias less="less -RS"
 
 # some sudo aliases
-function svim { vim sudo:${1}; } # This assumes the vim sudo plugin
+alias svim="sudo -E vim"
 alias sumv="sudo mv -i"
 alias surm="sudo rm -i"
 alias sucp="sudo cp"
