@@ -1,5 +1,9 @@
 # If we have powerline use that, otherwise go ahead and set a bunch of settings
-source ~/.vim/bundle/powerline/powerline/bindings/zsh/powerline.zsh && return
+if [ -x $(which powerline &>/dev/null) ]; then
+	powerline-daemon -q  # Really this should probably be replaced with a systemd user daemon
+	source $HOME/.local/lib64/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+	return 0
+fi
 
 # Use color in the prompt
 autoload -U colors && colors
