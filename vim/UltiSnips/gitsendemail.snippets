@@ -1,3 +1,4 @@
 snippet github
-This is available at my github: https://github.com/dcbaker/${1} ${2:`git rev-parse --abbrev-ref HEAD`}
+This is available at my github:
+https://github.com/dcbaker/${1:`printf "${PWD##*/}"`} ${2:`git rev-parse --abbrev-ref HEAD`}
 endsnippet
