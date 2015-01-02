@@ -22,9 +22,11 @@ Bundle "elzr/vim-json"
 Bundle "scrooloose/syntastic"
 Bundle "evanmiller/nginx-vim-syntax"
 Bundle "Keithbsmiley/rspec.vim"
-Bundle "vim-scripts/mako.vim"
 Bundle "rid9/vim-fstab"
 Bundle "jnwhiteh/vim-golang"
+Bundle "tikhomirov/vim-glsl"
+Bundle "dcbaker/piglit-vim.git"
+Bundle "dcbaker/mako.vim"
 
 " Vim colors
 Bundle "nanotech/jellybeans.vim"
@@ -47,7 +49,7 @@ set nocompatible				" this is vim, not vi
 set modeline					" this can be a security problem, but its dang useful
 set autoindent					" who doesn't like autoindent
 set autowrite					" autowrite on next, I forget a lot
-set noexpandtab					" Don't expand tabs to spaces
+set expandtab					" expand tabs to spaces
 set tabstop=4					" set a resonable tabstop, 8 is not reasonable
 set shiftwidth=4				" set a reasonable shiftwidth, 8 is not reasonable
 set backspace=indent,eol,start	" make backspace work like a reasonable system
@@ -76,6 +78,9 @@ let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 let g:syntastic_aggregate_errors=1
 
+" Don't ask to load ymc_confirm_extra_conf a million times
+let g:ycm_confirm_extra_conf=0
+
 " Use cool colors if it's supported by the terminal
 if &term =~ "xterm"
 	set t_Co=256 " Konsole workaround
@@ -97,15 +102,10 @@ if &term == "screen-256color"
 endif
 
 " Change the arrow keys to navigate lines, even if they're wrapped
-" Also make end and home go to the end of lines
 map <silent> <Up> gk
 imap <silent> <Up> <C-o>gk
 map <silent> <Down> gj
 imap <silent> <Down> <C-o>gj
-map <silent> <home> g<home>
-imap <silent> <home> <C-o>g<home>
-map <silent> <End> g<End>
-imap <silent> <End> <C-o>g<End>
 
 " If it's possible switch to UTF-n encoding
 " For using larger than UTF-8 we will need the bomb (which turns on the BOM)
