@@ -1,7 +1,6 @@
-
 [core]
 	editor = vim
-	pager = less -RS
+	pager = tig
 
 [alias]
 	cm = commit
@@ -22,11 +21,7 @@
 	chp = cherry-pick
 
 [color]
-	branch = auto
-	diff = auto
-	interactive = auto
-	status = auto
-	ui = true
+	ui = false
 
 [format]
 	pretty = oneline
