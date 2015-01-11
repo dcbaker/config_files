@@ -1,7 +1,7 @@
 # ~/.tmuxinator/gen_khronos_xml.yml
 
 name: gen_khronos_xml
-root: $SOURCE_DIR/gen_khronos_api
+root: ~/$SOURCE_DIR/gen_khronos_api
 
 # Optional tmux socket
 # socket_name: foo
@@ -27,11 +27,11 @@ windows:
   - mesa:
       layout: even-horizontal
       panes:
-        - cd $SOURCE_DIR/mesa/$SOURCE_DIR/mapi/glapi/gen; clear
-        - cd $SOURCE_DIR/mesa/$SOURCE_DIR/mapi/glapi/gen; clear
+        - cd ~/$SOURCE_DIR/mesa/$SOURCE_DIR/mapi/glapi/gen; clear
+        - cd ~/$SOURCE_DIR/mesa/$SOURCE_DIR/mapi/glapi/gen; clear
   - comparison:
       layout: even-horizontal
       panes:
         - clear
-        - cd $SOURCE_DIR/mesa/$SOURCE_DIR/mapi/glapi/gen; clear
+        - cd ~/$SOURCE_DIR/mesa/$SOURCE_DIR/mapi/glapi/gen; clear
 

@@ -1,7 +1,7 @@
 # ~/.tmuxinator/buildenv.yml
 
 name: buildenv
-root: $SOURCE_DIR/buildenv
+root: ~/$SOURCE_DIR/buildenv
 
 # Optional tmux socket
 # socket_name: foo

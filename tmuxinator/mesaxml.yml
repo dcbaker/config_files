@@ -1,7 +1,7 @@
 # ~/.tmuxinator/mesaxml.yml
 
 name: mesaxml
-root: $SOURCE_DIR/gen_khronos_api
+root: ~/$SOURCE_DIR/gen_khronos_api
 
 # Optional tmux socket
 # socket_name: foo

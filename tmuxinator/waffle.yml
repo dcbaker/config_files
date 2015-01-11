@@ -1,7 +1,7 @@
 # ~/.tmuxinator/waffle.yml
 
 name: waffle
-root: $SOURCE_DIR/waffle
+root: ~/$SOURCE_DIR/waffle
 
 # Optional tmux socket
 # socket_name: foo
