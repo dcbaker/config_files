@@ -11,7 +11,7 @@
 	ck = checkout
 	new = checkout -b
 	rb = rebase
-	llog = log --pretty=
+	llog = log --pretty=medium
 	cached = diff --cached
 	pr = pull --rebase
 	mr = merge --ff-only
