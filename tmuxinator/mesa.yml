@@ -1,7 +1,7 @@
 # ~/.tmuxinator/mesa.yml
 
 name: mesa
-root: ~/$SOURCE_DIR/mesa
+root: $SOURCE_DIR/mesa
 
 # Optional tmux socket
 # socket_name: foo

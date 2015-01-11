@@ -1,7 +1,7 @@
 # ~/.tmuxinator/lachesis.yml
 
 name: lachesis
-root: ~/$SOURCE_DIR/lachesis
+root: $SOURCE_DIR/lachesis
 
 # Optional tmux socket
 # socket_name: foo
