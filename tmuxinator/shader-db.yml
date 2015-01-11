@@ -1,7 +1,7 @@
 # ~/.tmuxinator/shader-db.yml
 
 name: shader-db
-root: ~/$SOURCE_DIR/shader-db
+root: ~/source/shader-db
 
 # Optional tmux socket
 # socket_name: foo

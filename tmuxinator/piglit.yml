@@ -1,7 +1,7 @@
 # ~/.tmuxinator/piglit.yml
 
 name: piglit
-root: ~/$SOURCE_DIR/piglit
+root: ~/source/piglit
 
 # Optional tmux socket
 # socket_name: foo
@@ -31,7 +31,7 @@ windows:
       panes:
         - build:
             - cd /tmp/piglit-build
-            - cmake ~/$SOURCE_DIR/piglit/ -GNinja -DCMAKE_INSTALL_PREFIX=/tmp/piglit-install -DPIGLIT_BUILD_DMA_BUF_TESTS=1 -DPIGLIT_BUILD_GLES1_TESTS=1 -DPIGLIT_BUILD_GLES2_TESTS=1 -DPIGLIT_BUILD_GLES3_TESTS=1 -DPIGLIT_BUILD_GLX_TESTS=1 -DPIGLIT_BUILD_GL_TESTS=1 -DPIGLIT_BUILD_CL_TESTS=0
+            - cmake ~/source/piglit/ -GNinja -DCMAKE_INSTALL_PREFIX=/tmp/piglit-install -DPIGLIT_BUILD_DMA_BUF_TESTS=1 -DPIGLIT_BUILD_GLES1_TESTS=1 -DPIGLIT_BUILD_GLES2_TESTS=1 -DPIGLIT_BUILD_GLES3_TESTS=1 -DPIGLIT_BUILD_GLX_TESTS=1 -DPIGLIT_BUILD_GL_TESTS=1 -DPIGLIT_BUILD_CL_TESTS=0
             - ninja install
         - install:
             - cd /tmp/piglit-install/

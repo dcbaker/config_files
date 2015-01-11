@@ -1,7 +1,7 @@
 # ~/.tmuxinator/goblin.yml
 
 name: goblin
-root: ~/$SOURCE_DIR/go/src/github.com/dcbaker/goblin
+root: ~/source/go/src/github.com/dcbaker/goblin
 
 # Optional tmux socket
 # socket_name: foo
