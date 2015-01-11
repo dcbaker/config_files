@@ -1,7 +1,7 @@
 # ~/.tmuxinator/pywrap.yml
 
 name: pywrap
-root: ~/source/pywrap
+root: ~/$SOURCE_DIR/pywrap
 
 # Optional tmux socket
 # socket_name: foo

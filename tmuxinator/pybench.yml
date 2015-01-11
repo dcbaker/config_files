@@ -1,7 +1,7 @@
 # ~/.tmuxinator/pybench.yml
 
 name: pybench
-root: ~/source/pybench
+root: ~/$SOURCE_DIR/pybench
 
 # Optional tmux socket
 # socket_name: foo

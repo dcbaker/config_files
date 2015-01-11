@@ -1,7 +1,7 @@
 # ~/.tmuxinator/learnc.yml
 
 name: learnc
-root: ~/source/cthehardway
+root: ~/$SOURCE_DIR/cthehardway
 
 # Optional tmux socket
 # socket_name: foo

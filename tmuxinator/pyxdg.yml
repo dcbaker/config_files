@@ -1,7 +1,7 @@
 # ~/.tmuxinator/pyxdg.yml
 
 name: pyxdg
-root: ~/source/pyxdg2
+root: ~/$SOURCE_DIR/pyxdg2
 
 # Optional tmux socket
 # socket_name: foo

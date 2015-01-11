@@ -1,7 +1,7 @@
 # ~/.tmuxinator/cwrap.yml
 
 name: cwrap
-root: ~/source/cwrap
+root: ~/$SOURCE_DIR/cwrap
 
 # Optional tmux socket
 # socket_name: foo

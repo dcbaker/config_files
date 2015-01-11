@@ -1,7 +1,7 @@
 # ~/.tmuxinator/pigherder.yml
 
 name: pigherder
-root: ~/source/pigherder
+root: ~/$SOURCE_DIR/pigherder
 
 # Optional tmux socket
 # socket_name: foo

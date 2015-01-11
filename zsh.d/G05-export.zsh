@@ -9,5 +9,6 @@ export LIBGL_DRIVERS_PATH="/usr/local/lib64/dri:/usr/local/lib32/dri:$LIBGL_DRIV
 export GBM_DRIVERS_PATH=$LIBGL_DRIVERS_PATH
 export LD_LIBRARY_PATH="/usr/local/lib32:/usr/local/lib64:$LD_LIBRARY_PATH"
 export GOPATH="$HOME/golang"
+export SOURCE_DIR="$HOME/src"
 
 # vim: ft=sh
