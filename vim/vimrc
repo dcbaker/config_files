@@ -5,7 +5,6 @@ call vundle#rc()
 
 " Use vundle to manage plugins
 Bundle 'gmarik/vundle'
-Bundle "vim-scripts/sudo.vim"
 Bundle "tpope/vim-fugitive"
 Bundle "sjl/gundo.vim"
 Bundle "tmhedberg/SimpylFold"
