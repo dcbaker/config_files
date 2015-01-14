@@ -39,3 +39,5 @@
 
 [sendmail]
 	confirm = always
+
+; vim: filetype=gitconfig noexpandtab
