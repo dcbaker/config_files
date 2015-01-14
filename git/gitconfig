@@ -23,6 +23,7 @@
 
 [color]
 	ui = false
+	interactive = True
 
 [format]
 	pretty = oneline
@@ -35,5 +36,6 @@
 
 [push]
 	default = upstream
+
 [sendmail]
 	confirm = always
