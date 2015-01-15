@@ -23,7 +23,10 @@
 
 [color]
 	ui = false
-	interactive = True
+	interactive = true
+	branch = true
+	showbranch = true
+	status = true
 
 [format]
 	pretty = oneline
