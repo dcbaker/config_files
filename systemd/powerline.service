@@ -1,0 +1,9 @@
+[Unit]
+Description=Start powerline daemon
+
+[Service]
+ExecStart=/home/dylan/.local/bin/powerline-daemon --foreground
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
