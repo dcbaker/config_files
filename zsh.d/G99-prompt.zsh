@@ -1,6 +1,5 @@
 # If we have powerline use that, otherwise go ahead and set a bunch of settings
-if [ -x $(which powerline &>/dev/null) ]; then
-	powerline-daemon -q  # Really this should probably be replaced with a systemd user daemon
+if systemctl --user status powerline &>/dev/null ; then
 	source $HOME/.local/lib64/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 	return 0
 fi
