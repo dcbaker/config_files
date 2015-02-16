@@ -3,8 +3,8 @@
 	pager = tig
 
 [alias]
-	cm = commit
-	cma = commit -a
+	cm = commit -v
+	cma = commit -av
 	a = add
 	amend = commit --amend
 	br = branch
