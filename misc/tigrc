@@ -1,3 +1,19 @@
 bind main c !git checkout %(commit)
+bind main R !git revert %(commit)
+bind diff R !git revert %(commit)
+bind log R !git revert %(commit)
+
+bind main <Ctrl-f> !tig-rebase fixup %(commit)
+bind diff <Ctrl-f> !tig-rebase fixup %(commit)
+bind main <Ctrl-k> !tig-rebase ascend %(commit)
+bind diff <Ctrl-k> !tig-rebase ascend %(commit)
+bind main <Ctrl-r> !tig-rebase reword %(commit)
+bind diff <Ctrl-r> !tig-rebase reword %(commit)
+bind main <Ctrl-e> !tig-rebase edit %(commit)
+bind diff <Ctrl-e> !tig-rebase edit %(commit)
+bind main <Ctrl-j> !tig-rebase descend %(commit)
+bind diff <Ctrl-j> !tig-rebase descend %(commit)
+bind main <Ctrl-x> !tig-rebase abort
+bind diff <Ctrl-x> !tig-rebase abort
 
 # vim: filetype=conf
