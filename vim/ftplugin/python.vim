@@ -15,7 +15,7 @@ let g:syntastic_python_checkers=['python', 'pyflakes', 'pylint']
 let b:syntastic_python_pylint_exec='pylint --rcfile $HOME/.config/pylintrc'
 
 " Find an assert that has a paren and remove the parens
-function StripAssert()
+function! StripAssert()
 	" Save wrapscan settings and turn it fof. This allows us to stop when the
 	" end of the file is reached.
 	let l:wrap = &ws
