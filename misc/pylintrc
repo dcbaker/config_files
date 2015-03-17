@@ -21,8 +21,30 @@ persistent=yes
 # usually to register additional checkers.
 load-plugins=
 
+# DEPRECATED
+include-ids=no
+
+# DEPRECATED
+symbols=no
+
+# Use multiple processes to speed up Pylint.
+jobs=1
+
+# Allow loading of arbitrary C extensions. Extensions are imported into the
+# active Python interpreter and may run arbitrary code.
+unsafe-load-any-extension=no
+
+# A comma-separated list of package or module names from where C extensions may
+# be loaded. Extensions are loading into the active Python interpreter and may
+# run arbitrary code
+extension-pkg-whitelist=
+
 
 [MESSAGES CONTROL]
+
+# Only show warnings with the listed confidence levels. Leave empty to show
+# all. Valid levels: HIGH, INFERENCE, INFERENCE_FAILURE, UNDEFINED
+confidence=
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
@@ -38,7 +60,7 @@ load-plugins=
 # --enable=similarities". If you want to run only the classes checker, but have
 # no Warning level messages displayed, use"--disable=all --enable=classes
 # --disable=W"
-disable=W0142
+disable=E1608,W1627,E1601,E1603,E1602,E1605,E1604,E1607,E1606,W1621,W1620,W1623,W1622,W1625,W1624,W1609,W1626,W1607,W1606,W1605,W1604,W1603,W1602,W1601,I0021,I0020,W0142,W1618,W1619,W1630,W1631,W1610,W1611,W1612,W1613,W1614,W1615,W1616,W1617,W1632,W1633,W0704,W1628,W1629,W1608,redundant-keyword-arg
 
 
 [REPORTS]
@@ -72,18 +94,94 @@ comment=no
 #msg-template=
 
 
-[VARIABLES]
+[BASIC]
 
-# Tells whether we should check for unused import in __init__ files.
-init-import=no
+# Required attributes for module, separated by a comma
+required-attributes=
 
-# A regular expression matching the beginning of the name of dummy variables
-# (i.e. not used).
-dummy-variables-rgx=_$|dummy
+# List of builtins function names that should not be used, separated by a comma
+bad-functions=map,filter,apply,input,cmp
 
-# List of additional names supposed to be defined in builtins. Remember that
-# you should avoid to define new builtins when possible.
-additional-builtins=
+# Good variable names which should always be accepted, separated by a comma
+good-names=i,j,k,n,m,p,e,x,y,z,r,f,ex,Run,_
+
+# Bad variable names which should always be refused, separated by a comma
+bad-names=foo,bar,baz,toto,tutu,tata
+
+# Colon-delimited sets of names that determine each other's naming style when
+# the name regexes allow several styles.
+name-group=
+
+# Include a hint for the correct naming format with invalid-name
+include-naming-hint=no
+
+# Regular expression matching correct function names
+function-rgx=[a-z_][a-z0-9_]{2,30}$
+
+# Naming hint for function names
+function-name-hint=[a-z_][a-z0-9_]{2,30}$
+
+# Regular expression matching correct variable names
+variable-rgx=[a-z_][a-z0-9_]{0,30}$
+
+# Naming hint for variable names
+variable-name-hint=[a-z_][a-z0-9_]{2,30}$
+
+# Regular expression matching correct constant names
+const-rgx=(([A-Z_][A-Z0-9_]*)|(__.*__))$
+
+# Naming hint for constant names
+const-name-hint=(([A-Z_][A-Z0-9_]*)|(__.*__))$
+
+# Regular expression matching correct attribute names
+attr-rgx=[a-z_][a-z0-9_]{2,30}$
+
+# Naming hint for attribute names
+attr-name-hint=[a-z_][a-z0-9_]{2,30}$
+
+# Regular expression matching correct argument names
+argument-rgx=[a-z_][a-z0-9_]{2,30}$
+
+# Naming hint for argument names
+argument-name-hint=[a-z_][a-z0-9_]{2,30}$
+
+# Regular expression matching correct class attribute names
+class-attribute-rgx=([A-Za-z_][A-Za-z0-9_]{2,30}|(__.*__))$
+
+# Naming hint for class attribute names
+class-attribute-name-hint=([A-Za-z_][A-Za-z0-9_]{2,30}|(__.*__))$
+
+# Regular expression matching correct inline iteration names
+inlinevar-rgx=[A-Za-z_][A-Za-z0-9_]*$
+
+# Naming hint for inline iteration names
+inlinevar-name-hint=[A-Za-z_][A-Za-z0-9_]*$
+
+# Regular expression matching correct class names
+class-rgx=[A-Z_][a-zA-Z0-9]+$
+
+# Naming hint for class names
+class-name-hint=[A-Z_][a-zA-Z0-9]+$
+
+# Regular expression matching correct module names
+module-rgx=(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$
+
+# Naming hint for module names
+module-name-hint=(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$
+
+# Regular expression matching correct method names
+method-rgx=[a-z_][a-z0-9_]{2,30}$
+
+# Naming hint for method names
+method-name-hint=[a-z_][a-z0-9_]{2,30}$
+
+# Regular expression which should only match function or class names that do
+# not require a docstring.
+no-docstring-rgx=__.*__
+
+# Minimum line length for functions/classes that require docstrings, shorter
+# ones are exempt.
+docstring-min-length=6
 
 
 [FORMAT]
@@ -108,80 +206,18 @@ max-module-lines=1000
 # tab).
 indent-string='    '
 
+# Number of spaces of indent required inside a hanging or continued line.
+indent-after-paren=4
 
-[BASIC]
-
-# Required attributes for module, separated by a comma
-required-attributes=
-
-# List of builtins function names that should not be used, separated by a comma
-bad-functions=map,filter,apply,input
-
-# Regular expression which should only match correct module names
-module-rgx=(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$
-
-# Regular expression which should only match correct module level names
-const-rgx=(([A-Z_][A-Z0-9_]*)|(__.*__))$
-
-# Regular expression which should only match correct class names
-class-rgx=[A-Z_][a-zA-Z0-9]+$
-
-# Regular expression which should only match correct function names
-function-rgx=[a-z_][a-z0-9_]{2,30}$
-
-# Regular expression which should only match correct method names
-method-rgx=[a-z_][a-z0-9_]{2,30}$
-
-# Regular expression which should only match correct instance attribute names
-attr-rgx=[a-z_][a-z0-9_]{2,30}$
-
-# Regular expression which should only match correct argument names
-argument-rgx=[a-z_][a-z0-9_]{2,30}$
-
-# Regular expression which should only match correct variable names
-variable-rgx=[a-z_][a-z0-9_]{0,30}$
-
-# Regular expression which should only match correct attribute names in class
-# bodies
-class-attribute-rgx=([A-Za-z_][A-Za-z0-9_]{2,30}|(__.*__))$
-
-# Regular expression which should only match correct list comprehension /
-# generator expression variable names
-inlinevar-rgx=[A-Za-z_][A-Za-z0-9_]*$
-
-# Good variable names which should always be accepted, separated by a comma
-good-names=i,j,k,n,m,p,e,x,y,z,r,f,ex,Run,_
-
-# Bad variable names which should always be refused, separated by a comma
-bad-names=foo,bar,baz,toto,tutu,tata
-
-# Regular expression which should only match function or class names that do
-# not require a docstring.
-no-docstring-rgx=__.*__
-
-# Minimum line length for functions/classes that require docstrings, shorter
-# ones are exempt.
-docstring-min-length=6
+# Expected format of line ending, e.g. empty (any line ending), LF or CRLF.
+expected-line-ending-format=
 
 
-[TYPECHECK]
+[LOGGING]
 
-# Tells whether missing members accessed in mixin class should be ignored. A
-# mixin class is detected if its name ends with "mixin" (case insensitive).
-ignore-mixin-members=yes
-
-# List of classes names for which member attributes should not be checked
-# (useful for classes with attributes dynamically set).
-ignored-classes=SQLObject,nose.tools,nose.tools.trivial
-
-# When zope mode is activated, add a predefined set of Zope acquired attributes
-# to generated-members.
-zope=no
-
-# List of members which are set dynamically and missed by pylint inference
-# system, and so shouldn't trigger E0201 when accessed. Python regular
-# expressions are accepted.
-generated-members=REQUEST,acl_users,aq_parent
+# Logging modules to check that the string format arguments are in logging
+# function parameter format
+logging-modules=logging
 
 
 [MISCELLANEOUS]
@@ -205,6 +241,67 @@ ignore-docstrings=yes
 ignore-imports=no
 
 
+[SPELLING]
+
+# Spelling dictionary name. Available dictionaries: en_AU (myspell), en_CA
+# (myspell), en_GB (myspell), en_NZ (myspell), en_US (myspell), en_ZA
+# (myspell).
+spelling-dict=
+
+# List of comma separated words that should not be checked.
+spelling-ignore-words=
+
+# A path to a file that contains private dictionary; one word per line.
+spelling-private-dict-file=
+
+# Tells whether to store unknown words to indicated private dictionary in
+# --spelling-private-dict-file option instead of raising a message.
+spelling-store-unknown-words=no
+
+
+[TYPECHECK]
+
+# Tells whether missing members accessed in mixin class should be ignored. A
+# mixin class is detected if its name ends with "mixin" (case insensitive).
+ignore-mixin-members=yes
+
+# List of module names for which member attributes should not be checked
+# (useful for modules/projects where namespaces are manipulated during runtime
+# and thus existing member attributes cannot be deduced by static analysis
+ignored-modules=nose.tools,nose.tools.trivial,six.moves
+
+# List of classes names for which member attributes should not be checked
+# (useful for classes with attributes dynamically set).
+ignored-classes=SQLObject,six.moves,nose.tools,nose.tools.trivial
+
+# When zope mode is activated, add a predefined set of Zope acquired attributes
+# to generated-members.
+zope=no
+
+# List of members which are set dynamically and missed by pylint inference
+# system, and so shouldn't trigger E0201 when accessed. Python regular
+# expressions are accepted.
+generated-members=REQUEST,acl_users,aq_parent
+
+
+[VARIABLES]
+
+# Tells whether we should check for unused import in __init__ files.
+init-import=no
+
+# A regular expression matching the name of dummy variables (i.e. expectedly
+# not used).
+dummy-variables-rgx=_$|dummy
+
+# List of additional names supposed to be defined in builtins. Remember that
+# you should avoid to define new builtins when possible.
+additional-builtins=
+
+# List of strings which can identify a callback function by name. A callback
+# name must start or end with one of those strings.
+callbacks=cb_,_cb
+
+
 [CLASSES]
 
 # List of interface methods to ignore, separated by a comma. This is used for
@@ -219,6 +316,10 @@ valid-classmethod-first-arg=cls
 
 # List of valid names for the first argument in a metaclass class method.
 valid-metaclass-classmethod-first-arg=mcs
+
+# List of member names, which should be excluded from the protected access
+# warning.
+exclude-protected=_asdict,_fields,_replace,_source,_make
 
 
 [DESIGN]
