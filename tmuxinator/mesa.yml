@@ -1,7 +1,7 @@
 # ~/.tmuxinator/mesa.yml
 
 name: mesa
-root: ~/source/mesa/src/mapi/glapi/gen
+root: ~/source/mesa/
 
 # Optional tmux socket
 # socket_name: foo
@@ -23,10 +23,10 @@ windows:
   - editor:
       layout: even-horizontal
       panes:
-        - clear
-        - clear
-  - python26:
+        - cd src/mapi/glapi/gen; clear
+        - cd src/mapi/glapi/gen; clear
+  - test:
       layout: even-horizontal
       panes:
-          - pyenv activate mesa-gen-2.6; clear
-          - pyenv activate mesa-gen-2.6; clear
+          - pyenv activate mesa-2.6; clear
+          - pyenv activate mesa-vmware; clear
