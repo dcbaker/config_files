@@ -24,8 +24,12 @@ windows:
   - editor:
       layout: even-horizontal
       panes:
-        - clear
-        - clear
+        - accel:
+          - pyenv activate piglit-2.7-accel
+          - clear
+        - noaccel:
+          - pyenv activate piglit-2.7-noaccel
+          - clear
   - build:
       layout: main-vertical
       panes:
