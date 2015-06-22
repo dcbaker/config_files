@@ -41,6 +41,6 @@
 	default = upstream
 
 [sendmail]
-	confirm = always
+	confirm = auto
 
 ; vim: filetype=gitconfig noexpandtab
