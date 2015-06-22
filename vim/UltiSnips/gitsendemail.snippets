@@ -2,3 +2,8 @@ snippet github
 This is available at my github:
 https://github.com/dcbaker/${1:`printf "${PWD##*/}"`} ${2:`git rev-parse --abbrev-ref HEAD`}
 endsnippet
+
+snippet fdo
+This is available on freedesktop.org:
+git://people.freedesktop.org/~dbaker/${1:`printf "${PWD##*/}"`} ${2:`git rev-parse --abbrev-ref HEAD`}
+endsnippet
