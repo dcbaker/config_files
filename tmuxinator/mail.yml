@@ -20,7 +20,6 @@ root: ~/
 
 windows:
   - mail:
-      layout: b3fc,271x70,0,0{194x70,0,0,0,76x70,195,0,1}
+      layout: even-horizontal
       panes:
         - mutt
-        - journalctl -f --user-unit offlineimap
