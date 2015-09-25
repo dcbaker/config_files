@@ -24,3 +24,8 @@ windows:
       panes:
         - clear
         - clear
+  - salt:
+      layout: even-horizontal
+      panes:
+        - cd ~/source/jenkins-salt; clear
+        - cd ~/source/jenkins-salt; clear
