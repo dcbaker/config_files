@@ -1,34 +1,40 @@
 " Use vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
 " Use vundle to manage plugins
-Bundle 'gmarik/vundle'
-Bundle "tpope/vim-fugitive"
-Bundle "sjl/gundo.vim"
-Bundle "tmhedberg/SimpylFold"
-Bundle "scrooloose/nerdcommenter"
-Bundle "SirVer/ultisnips"
-Bundle "honza/vim-snippets"
-Bundle "Lokaltog/powerline"
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'sjl/gundo.vim'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'Lokaltog/powerline'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'FelikZ/ctrlp-py-matcher'
+Plugin 'thinca/vim-localrc'
+Plugin 'editorconfig/editorconfig-vim'
 
 " Syntax
-Bundle "kurayama/systemd-vim-syntax"
-Bundle "hdima/python-syntax" 
-Bundle "tpope/vim-git"
-Bundle "elzr/vim-json" 
-Bundle "scrooloose/syntastic"
-Bundle "evanmiller/nginx-vim-syntax"
-Bundle "Keithbsmiley/rspec.vim"
-Bundle "rid9/vim-fstab"
-Bundle "jnwhiteh/vim-golang"
-Bundle "tikhomirov/vim-glsl"
-Bundle "dcbaker/piglit-vim.git"
-Bundle "dcbaker/mako.vim"
+Plugin 'kurayama/systemd-vim-syntax'
+Plugin 'hdima/python-syntax' 
+Plugin 'tpope/vim-git'
+Plugin 'elzr/vim-json' 
+Plugin 'scrooloose/syntastic'
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'Keithbsmiley/rspec.vim'
+Plugin 'rid9/vim-fstab'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'tikhomirov/vim-glsl'
+Plugin 'dcbaker/piglit-vim.git'
+Plugin 'dcbaker/mako.vim'
 
 " Vim colors
-Bundle "nanotech/jellybeans.vim"
+Plugin 'nanotech/jellybeans.vim'
+
+call vundle#end()
 
 colorscheme jellybeans
 
@@ -86,6 +92,9 @@ if &term =~ "xterm"
 	set t_Sb=[4%dm
 	set t_Sf=[3%dm
 endif
+
+" Use fast search
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " Using VIM in tmux can have some unexpected issues.
 " This attempts to fix it
