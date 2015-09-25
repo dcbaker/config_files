@@ -8,8 +8,7 @@
 	a = add
 	amend = commit --amend
 	br = branch
-	ck = checkout
-	new = checkout -b
+	new = ck -b
 	rb = rebase
 	llog = log --pretty=medium
 	cached = diff --cached
