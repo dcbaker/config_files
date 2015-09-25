@@ -39,4 +39,5 @@ windows:
             - ninja install
         - install:
             - cd /tmp/piglit-install/
+            - export PIGLIT_DEBUG=1
             - clear
