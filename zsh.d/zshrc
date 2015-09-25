@@ -9,6 +9,8 @@ bindkey -v
 zstyle :compinstall filename "$HOME/.zshrc"
 
 # Enable autocompletion
+fpath=(~/.zsh.d/completions ~/.local/share/zsh-completions $fpath)
+
 # Use menues for completion
 autoload -Uz compinit && compinit
 autoload -Uz bashcompinit && bashcompinit
