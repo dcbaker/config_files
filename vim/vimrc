@@ -86,6 +86,9 @@ let g:syntastic_aggregate_errors=1
 " Don't ask to load ymc_confirm_extra_conf a million times
 let g:ycm_confirm_extra_conf=0
 
+" Make editor config play nice
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
 " Use cool colors if it's supported by the terminal
 if &term =~ "xterm"
 	set t_Co=256 " Konsole workaround
@@ -125,6 +128,5 @@ if has("multi_byte")
   endif
   set encoding=utf-8
   setglobal fileencoding=utf-8
-  "setglobal bomb " better to set this locally than globally.
-  set fileencodings=ucs-bom,utf-8,latin1
+  set fileencodings=utf-8,latin1
 endif
