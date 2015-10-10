@@ -21,14 +21,8 @@ persistent=yes
 # usually to register additional checkers.
 load-plugins=
 
-# DEPRECATED
-include-ids=no
-
-# DEPRECATED
-symbols=no
-
 # Use multiple processes to speed up Pylint.
-jobs=1
+jobs=2
 
 # Allow loading of arbitrary C extensions. Extensions are imported into the
 # active Python interpreter and may run arbitrary code.
@@ -100,7 +94,8 @@ comment=no
 required-attributes=
 
 # List of builtins function names that should not be used, separated by a comma
-bad-functions=map,filter,apply,input,cmp
+# input is not here because in python3 it works correctly
+bad-functions=map,filter,apply,cmp
 
 # Good variable names which should always be accepted, separated by a comma
 good-names=i,j,k,n,m,p,e,x,y,z,r,f,ex,Run,_
@@ -268,7 +263,7 @@ ignore-mixin-members=yes
 # List of module names for which member attributes should not be checked
 # (useful for modules/projects where namespaces are manipulated during runtime
 # and thus existing member attributes cannot be deduced by static analysis
-ignored-modules=nose.tools,nose.tools.trivial,six.moves,numpy
+ignored-modules=nose.tools,nose.tools.trivial,six.moves,numpy,numpy.random
 
 # List of classes names for which member attributes should not be checked
 # (useful for classes with attributes dynamically set).
