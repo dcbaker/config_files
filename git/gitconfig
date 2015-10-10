@@ -34,12 +34,13 @@
 	; set stuff
 
 [sendemail]
+	confirm = auto
 	; set more stuff
 
 [push]
 	default = upstream
 
-[sendmail]
-	confirm = auto
+[init]
+	templatedir = /home/dylan/.local/share/git
 
 ; vim: filetype=gitconfig noexpandtab
