@@ -7,4 +7,11 @@ export PKG_CONFIG_PATH="/usr/local/lib/x86_64-linux-gnu/pkgconfig/:$PKG_CONFIG_P
 export SSH_ASKPASS="/usr/bin/ksshaskpass"
 export GOPATH="$HOME/golang"
 
+# XDG variables
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_DIR=$HOME/.local/share
+export XDG_DATA_DIRS=/usr/local/share:/usr/share
+export XDG_CONFIG_DIRS=/etc/xdg
+
 # vim: ft=sh
