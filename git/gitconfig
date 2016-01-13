@@ -43,4 +43,7 @@
 [init]
 	templatedir = /home/dylan/.local/share/git
 
+[rebase]
+	autostash = true
+
 ; vim: filetype=gitconfig noexpandtab
