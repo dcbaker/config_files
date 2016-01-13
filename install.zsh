@@ -36,3 +36,6 @@ ln -s ${0:A}/tmuxinator ~/.tmuxinator
 # create directories for zsh
 mkdir -p $XDG_CACHE_HOME/vim/{backup,swap,undo}
 mkdir -p $XDG_DATA_DIR/vim/bundle
+
+# python
+mkdir -p $XDG_CACHE_HOME/python-eggs
