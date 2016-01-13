@@ -1,0 +1,14 @@
+[Unit]
+Description=Start offlineimap as a daemon
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/offlineimap
+KillSignal=SIGUSR2
+Restart=always
+ExecStartPre=/bin/sh -c '/bin/rm -f $HOME/.offlineimap/*.lock'
+ExecStopPost=/bin/sh -c '/bin/rm -f $HOME/.offlineimap/*.lock'
+ExecReload=/bin/sh -c '/bin/rm -f $HOME/.offlineimap/*.lock'
+
+[Install]
+WantedBy=default.target

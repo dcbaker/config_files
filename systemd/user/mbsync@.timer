@@ -1,0 +1,9 @@
+[Unit]
+Description=Sync %i mailbox
+
+[Timer]
+OnBootSec=45
+OnCalendar=*:0/5
+
+[Install]
+WantedBy=timers.target
