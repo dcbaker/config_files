@@ -1,0 +1,45 @@
+# Turn off beeping
+unsetopt beep
+
+# Usev Vi-like key bindings
+bindkey -v
+
+# Load global (G), then local (L) config files.
+# Global files are checked into git, while Local files are specifically not by
+# a .gitignore file.
+for l in G L; do
+    # TODO: figure out how to make this not hardcoded
+	for file in $HOME/.config/zsh/zsh.d/*; do
+		# The regex here is a little crazy, but zsh is a double edged sword:
+		# Normally placing the regex string inside '' would make everything
+		# happy, but the $l makes this impossible, so escaping a lot of
+		# characters is the only choice
+		[[ "${file}" =~ .\*/"$l"[0-9].\*\.zsh ]] && source $file
+	done
+done
+
+# Load environment variables and such before get here.
+
+# The following lines were added by compinstall
+zstyle :compinstall filename "$XDG_CONFIG_HOME/zsh/zshrc"
+
+# Enable autocompletion
+fpath=($XDG_CONFIG_HOME/zsh/completions $XDG_DATA_DIR/zsh-completions $fpath)
+
+# Use menues for completion
+autoload -Uz compinit && compinit
+autoload -Uz bashcompinit && bashcompinit
+zstyle ':completion:*' menu select
+
+# auto-complete aliases
+setopt completealiases
+
+# correct bad spelling
+setopt correct
+
+# Use pushd instead of cd, whic gives some really useful option
+setopt auto_pushd
+
+# If we don't return zero here the initial returncode with be 1, since some of
+# the files will fail to load
+return 0
