@@ -8,6 +8,7 @@ export XDG_CONFIG_DIRS=/etc/xdg
 # Make various programs play nice with XDG
 export HISTFILE=$XDG_DATA_DIR/zsh/history
 export TIGRC_USER=$XDG_CONFIG_HOME/tig/tigrc
+export TMUX_TEMPDIR=$XDG_RUNTIME_DIR/tmux
 
 # System sepcific variables
 export EDITOR="/usr/bin/vim"

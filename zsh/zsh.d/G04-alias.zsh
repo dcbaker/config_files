@@ -16,4 +16,7 @@ alias usystemctl="systemctl --user"
 # Force ssh-add to use a gui agent
 alias ssh-add="ssh-add </dev/null"
 
+# xdg workaround aliases
+alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
+
 # vim: ft=sh
