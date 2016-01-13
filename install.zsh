@@ -31,7 +31,7 @@ mkdir -p $XDG_DATA_DIR/zsh
 mkdir -p $XDG_DATA_DIR/zsh/zkbd
 
 # tmuxinator still has no XDG support
-ln -s ${0:A}/tmuxinator ~/.tmuxinator
+ln -s $XDG_CONFIG_HOME/tmuxinator ~/.tmuxinator
 
 # create directories for zsh
 mkdir -p $XDG_CACHE_HOME/vim/{backup,swap,undo}
