@@ -29,3 +29,6 @@ echo "export ZDOTDIR=$XDG_CONFIG_HOME/zsh" > ~/.zshenv
 # Create directoires for zsh
 mkdir -p $XDG_DATA_DIR/zsh
 mkdir -p $XDG_DATA_DIR/zsh/zkbd
+
+# tmuxinator still has no XDG support
+ln -s ${0:A}/tmuxinator ~/.tmuxinator
