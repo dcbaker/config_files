@@ -12,6 +12,7 @@ export TMUX_TEMPDIR=$XDG_RUNTIME_DIR/tmux
 export PYLINTRC=$XDG_CONFIG_HOME/pylint/pylintrc
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export PYTHON_EGG_CACHE="$XDG_CACHE_HOME"/python-eggs
+export CCACHE_DIR=$XDG_CACHE_HOME/ccache
 
 # System sepcific variables
 export EDITOR="/usr/bin/vim"

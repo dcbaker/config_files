@@ -39,3 +39,6 @@ mkdir -p $XDG_DATA_DIR/vim/bundle
 
 # python
 mkdir -p $XDG_CACHE_HOME/python-eggs
+
+# ccache
+mkdir -p $XDG_CACHE_HOME/ccache
