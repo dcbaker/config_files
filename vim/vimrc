@@ -1,7 +1,16 @@
+" XDG stuff
+set backupdir=$XDG_CACHE_HOME/vim/backup//
+set directory=$XDG_CACHE_HOME/vim/swap//
+set undodir=$XDG_CACHE_HOME/vim/undo//
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+set rtp+=$XDG_CONFIG_HOME/vim
+let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+
 " Use vundle
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
+
+set rtp+=$XDG_DATA_DIR/vim/bundle/Vundle.vim
+call vundle#begin(expand('$XDG_DATA_DIR').'vim/bundle')
 
 " Use vundle to manage plugins
 Plugin 'VundleVim/Vundle.vim'
@@ -39,13 +48,8 @@ Plugin 'nanotech/jellybeans.vim'
 
 call vundle#end()
 
-colorscheme jellybeans
-
-" Fix debian brokenness
-set rtp+=/usr/share/vim-youcompleteme
-
 " Make powerline work
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set rtp+=$XDG_DATA_DIR/vim/bundle/powerline/powerline/bindings/vim
 
 set laststatus=2
 set background=dark				" cuz who uses light colored consoles?
@@ -61,17 +65,13 @@ set expandtab					" expand tabs to spaces
 set tabstop=4					" set a resonable tabstop, 8 is not reasonable
 set shiftwidth=4				" set a reasonable shiftwidth, 8 is not reasonable
 set backspace=indent,eol,start	" make backspace work like a reasonable system
-set viminfo='20,\"50			" store only 50 lines in register
 set history=50					" keep only 50 lines of history
-set directory=~/.vim/tmp		" store temporary files in their own folder
 set hlsearch					" search with hilight
 set omnifunc=					" do not use omnifunc
 set foldmethod=syntax 			" Syntax folding by default, change it in the ftplugins
 set exrc                        " Load project .vimrc files
 set secure                      " disable unsafe commands in project .vimrc
-" create backups, but put them in a backup folder
-set backup
-set backupdir=~/.vim/backup
+set backup " create backups, but put them in a backup folder
 " This allows for visual identification of whitespace
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 syntax on 						" turn syntax highlighting on
@@ -112,8 +112,9 @@ if &term == "screen-256color"
 	map! <Esc>OH <Home>
 	map <Esc>OF <End>
 	map! <Esc>OF <End>
-	colorscheme jellybeans
 endif
+
+colorscheme jellybeans
 
 " Change the arrow keys to navigate lines, even if they're wrapped
 map <silent> <Up> gk

@@ -10,6 +10,7 @@ export HISTFILE=$XDG_DATA_DIR/zsh/history
 export TIGRC_USER=$XDG_CONFIG_HOME/tig/tigrc
 export TMUX_TEMPDIR=$XDG_RUNTIME_DIR/tmux
 export PYLINTRC=$XDG_CONFIG_HOME/pylint/pylintrc
+export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 
 # System sepcific variables
 export EDITOR="/usr/bin/vim"
