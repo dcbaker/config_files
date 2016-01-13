@@ -1,7 +1,7 @@
-# ~/.tmuxinator/mesa.yml
+# ~/.tmuxinator/patchwork.yml
 
-name: mesa
-root: ~/source/mesa/
+name: patchwork
+root: ~/source/patchwork
 
 # Optional tmux socket
 # socket_name: foo
@@ -11,7 +11,7 @@ root: ~/source/mesa/
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
-pre_window: pyenv activate mesa-gen-2.7
+pre_window: pyenv activate patchwork
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -19,14 +19,22 @@ pre_window: pyenv activate mesa-gen-2.7
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
 
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t patchwork
+
 windows:
   - editor:
       layout: even-horizontal
       panes:
-        - cd src/mapi/glapi/gen; clear
-        - cd src/mapi/glapi/gen; clear
+        - clear
+        - clear
   - test:
       layout: even-horizontal
       panes:
-          - pyenv activate mesa-gen-2.6; clear
-          - pyenv activate mesa-gen-vmware; clear
+        - clear

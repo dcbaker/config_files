@@ -36,8 +36,13 @@ windows:
         - build:
             - cd /tmp/piglit-build
             - cmake ~/source/piglit/ -GNinja -DCMAKE_INSTALL_PREFIX=/tmp/piglit-install -DPIGLIT_BUILD_DMA_BUF_TESTS=1 -DPIGLIT_BUILD_GLES1_TESTS=1 -DPIGLIT_BUILD_GLES2_TESTS=1 -DPIGLIT_BUILD_GLES3_TESTS=1 -DPIGLIT_BUILD_GLX_TESTS=1 -DPIGLIT_BUILD_GL_TESTS=1 -DPIGLIT_BUILD_CL_TESTS=1
-            - ninja install
+            - ninja
+            - ninja install 1>/dev/null
         - install:
             - cd /tmp/piglit-install/
             - export PIGLIT_DEBUG=1
+            - export LIBGL_DRIVERS_PATH=~/source/mesa/lib LD_LIBRARY_PATH=~/source/mesa/lib
             - clear
+  - test:
+      panes:
+        - main: clear
