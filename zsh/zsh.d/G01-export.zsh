@@ -9,6 +9,7 @@ export XDG_CONFIG_DIRS=/etc/xdg
 export HISTFILE=$XDG_DATA_DIR/zsh/history
 export TIGRC_USER=$XDG_CONFIG_HOME/tig/tigrc
 export TMUX_TEMPDIR=$XDG_RUNTIME_DIR/tmux
+export PYLINTRC=$XDG_CONFIG_HOME/pylint/pylintrc
 
 # System sepcific variables
 export EDITOR="/usr/bin/vim"
