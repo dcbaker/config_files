@@ -54,8 +54,7 @@ mbsyncrc
 menus/
 piglit.conf
 plasma-localerc
-plasma-org.kde.plasma.desktop-appletsrc
-plasma-org.kde.plasma.desktop-appletsrc.j28129
+plasma-org.kde.plasma.desktop-appletsrc*
 plasmashellrc
 powerdevilrc
 powermanagementprofilesrc
@@ -66,3 +65,4 @@ startupconfigfiles
 startupconfigkeys
 systemsettingsrc
 trashrc
+evolution
