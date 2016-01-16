@@ -14,6 +14,7 @@ export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export PYTHON_EGG_CACHE="$XDG_CACHE_HOME"/python-eggs
 export CCACHE_DIR=$XDG_CACHE_HOME/ccache
 export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuch-config
+export LESSHISTFILE=$XDG_DATA_DIR/less/history
 
 # System sepcific variables
 export EDITOR="/usr/bin/vim"
