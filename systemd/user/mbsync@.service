@@ -5,4 +5,5 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/mbsync --config %h/.config/mbsyncrc %i
+ExecStart=/bin/mbsync --config %h/.config/mbsync/mbsyncrc %i
+ExecStart=/home/dylan/.local/bin/notmuch-poll
