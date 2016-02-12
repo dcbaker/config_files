@@ -15,6 +15,7 @@ dconf
 dolphinrc
 drkonqirc
 emaildefaults
+fontconfig/
 freshwrapper-data
 google-chrome
 gtk-2.0
@@ -22,12 +23,15 @@ gtk-3.0
 gtkrc
 gtkrc-2.0
 kactivitymanagerdrc
+kcmfonts
 kcminputrc
 kconf_updaterc
 kde.org/
+kde5-nm-connection-editorrc
 kdebugrc
 kded_device_automounterrc
 kdeglobals
+kfontinstuirc
 kgammarc
 kglobalshortcutsrc
 khotkeysrc
@@ -42,6 +46,7 @@ konversationrc
 krunnerrc
 kscreenlockerrc
 ksmserverrc
+ksslcertificatemanager
 ktimezonedrc
 kwalletmanager5rc
 kwalletrc
@@ -59,6 +64,7 @@ plasma-org.kde.plasma.desktop-appletsrc.j28129
 plasmashellrc
 powerdevilrc
 powermanagementprofilesrc
+pudb
 pulse/
 session/
 startupconfig
@@ -66,3 +72,4 @@ startupconfigfiles
 startupconfigkeys
 systemsettingsrc
 trashrc
+
