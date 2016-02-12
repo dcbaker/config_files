@@ -15,6 +15,7 @@ dconf
 dolphinrc
 drkonqirc
 emaildefaults
+evolution
 fontconfig/
 freshwrapper-data
 google-chrome
@@ -55,12 +56,11 @@ kwinrulesrc
 kxkbrc
 libaccounts-glib/
 libprs500rc
-mbsyncrc
+mbsync
 menus/
 piglit.conf
 plasma-localerc
-plasma-org.kde.plasma.desktop-appletsrc
-plasma-org.kde.plasma.desktop-appletsrc.j28129
+plasma-org.kde.plasma.desktop-appletsrc*
 plasmashellrc
 powerdevilrc
 powermanagementprofilesrc
@@ -72,4 +72,3 @@ startupconfigfiles
 startupconfigkeys
 systemsettingsrc
 trashrc
-

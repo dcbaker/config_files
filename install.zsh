@@ -29,9 +29,10 @@ echo "export ZDOTDIR=$XDG_CONFIG_HOME/zsh" > ~/.zshenv
 # Create directoires for zsh
 mkdir -p $XDG_DATA_DIR/zsh
 mkdir -p $XDG_DATA_DIR/zsh/zkbd
+mkdir -p $XDG_DATA_DIR/zsh/completions
 
 # tmuxinator still has no XDG support
-ln -s $XDG_CONFIG_HOME/tmuxinator ~/.tmuxinator
+ln -sf $XDG_CONFIG_HOME/tmuxinator ~/.tmuxinator
 
 # create directories for zsh
 mkdir -p $XDG_CACHE_HOME/vim/{backup,swap,undo}
@@ -42,3 +43,24 @@ mkdir -p $XDG_CACHE_HOME/python-eggs
 
 # ccache
 mkdir -p $XDG_CACHE_HOME/ccache
+
+# less
+mkdir -p $XDG_DATA_DIR/less
+
+# try to get vundle, you'll need git
+if [[ ! -d $XDG_DATA_DIR/vim/bundle/Vundle.vim ]]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git $XDG_DATA_DIR/vim/bundle/Vundle.vim 1>/dev/null
+    vim +PluginInstall +qall
+fi
+
+# Add some other helpers
+mkdir -p $XDG_DATA_DIR/repos
+if [[ ! -d $XDG_DATA_DIR/repos/jsontidy ]]; then
+    git clone https://github.com/dcbaker/jsontidy $XDG_DATA_DIR/repos/jsontidy 1>/dev/null
+    ln -s $XDG_DATA_DIR/repos/jsontidy/jsontidy.py $HOME/.local/bin/
+fi
+if [[ ! -d $XDG_DATA_DIR/repos/git-ck ]]; then
+    git clone https://github.com/dcbaker/git-ck $XDG_DATA_DIR/repos/git-ck 1>/dev/null
+    ln -s $XDG_DATA_DIR/repos/git-ck/git-ck $HOME/.local/bin/
+    ln -s $XDG_DATA_DIR/repos/git-ck/zsh/_git-ck $XDG_DATA_DIR/zsh/completions/
+fi

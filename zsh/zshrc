@@ -24,7 +24,7 @@ done
 zstyle :compinstall filename "$XDG_CONFIG_HOME/zsh/zshrc"
 
 # Enable autocompletion
-fpath=($XDG_CONFIG_HOME/zsh/completions $XDG_DATA_DIR/zsh-completions $fpath)
+fpath=($XDG_CONFIG_HOME/zsh/completions $XDG_DATA_DIR/zsh/completions $fpath)
 
 # Use menues for completion
 autoload -Uz compinit && compinit
