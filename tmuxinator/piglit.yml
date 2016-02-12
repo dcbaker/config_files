@@ -25,10 +25,10 @@ windows:
       layout: even-horizontal
       panes:
         - accel:
-          - pyenv activate piglit-2.7-accel
+          - pyenv activate piglit-3.3-accel
           - clear
         - noaccel:
-          - pyenv activate piglit-2.7-noaccel
+          - pyenv activate piglit-3.3-noaccel
           - clear
   - build:
       layout: main-vertical
