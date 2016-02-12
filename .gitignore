@@ -42,6 +42,7 @@ konversationrc
 krunnerrc
 kscreenlockerrc
 ksmserverrc
+ksslcertificatemanager
 ktimezonedrc
 kwalletmanager5rc
 kwalletrc
@@ -50,7 +51,7 @@ kwinrulesrc
 kxkbrc
 libaccounts-glib/
 libprs500rc
-mbsyncrc
+mbsync
 menus/
 piglit.conf
 plasma-localerc
