@@ -76,6 +76,8 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 syntax on 						" turn syntax highlighting on
 filetype indent plugin on		" do indent and plugins based on filetype
 
+let g:sh_fold_enabled=3
+
 " Make YCM and UltriSnips live happily
 let g:UltiSnipsExpandTrigger="<Leader>i"
 let g:UltiSnipsListSnippets="<Leader>l"
