@@ -1,0 +1,8 @@
+[Unit]
+Description=Start KeePass password manager
+
+[Service]
+ExecStart=/bin/keepass
+
+[Install]
+WantedBy=wm.target
