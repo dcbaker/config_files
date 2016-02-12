@@ -22,7 +22,6 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'Lokaltog/powerline'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'thinca/vim-localrc'
@@ -49,7 +48,7 @@ Plugin 'nanotech/jellybeans.vim'
 call vundle#end()
 
 " Make powerline work
-set rtp+=$XDG_DATA_DIR/vim/bundle/powerline/powerline/bindings/vim
+let g:powerline_pycmd="py3"
 
 set laststatus=2
 set background=dark				" cuz who uses light colored consoles?
