@@ -47,6 +47,9 @@ mkdir -p $XDG_CACHE_HOME/ccache
 # less
 mkdir -p $XDG_DATA_DIR/less
 
+# git
+mkdir -p $XDG_DATA_DIR/git/templates
+
 # try to get vundle, you'll need git
 if [[ ! -d $XDG_DATA_DIR/vim/bundle/Vundle.vim ]]; then
     git clone https://github.com/VundleVim/Vundle.vim.git $XDG_DATA_DIR/vim/bundle/Vundle.vim 1>/dev/null
@@ -55,6 +58,7 @@ fi
 
 # Add some other helpers
 mkdir -p $XDG_DATA_DIR/repos
+mkdir -p $HOME/.local/bin/
 if [[ ! -d $XDG_DATA_DIR/repos/jsontidy ]]; then
     git clone https://github.com/dcbaker/jsontidy $XDG_DATA_DIR/repos/jsontidy 1>/dev/null
     ln -s $XDG_DATA_DIR/repos/jsontidy/jsontidy.py $HOME/.local/bin/
