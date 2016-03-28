@@ -41,6 +41,10 @@ Plugin 'tikhomirov/vim-glsl'
 Plugin 'dcbaker/piglit-vim.git'
 Plugin 'dcbaker/mako.vim'
 Plugin 'rust-lang/rust.vim'
+Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'anntzer/vim-cython.git'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " Vim colors
 Plugin 'nanotech/jellybeans.vim'
@@ -77,6 +81,7 @@ syntax on 						" turn syntax highlighting on
 filetype indent plugin on		" do indent and plugins based on filetype
 
 let g:sh_fold_enabled=3
+let g:vim_markdown_conceal = 0
 
 " Make YCM and UltriSnips live happily
 let g:UltiSnipsExpandTrigger="<Leader>i"
