@@ -1,6 +1,6 @@
 # If we have powerline use that, otherwise go ahead and set a bunch of settings
 if systemctl --user status powerline &>/dev/null ; then
-    source /usr/share/zsh/site-contrib/powerline.zsh
+    source /usr/lib64/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
 	return 0
 fi
 
