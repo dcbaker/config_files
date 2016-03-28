@@ -19,7 +19,7 @@ export LESSHISTFILE=$XDG_DATA_DIR/less/history
 # System sepcific variables
 export EDITOR="/usr/bin/vim"
 export TERM="screen-256color"
-export PATH="$(/usr/bin/ruby -rubygems -e 'puts Gem.user_dir')/bin:/usr/lib/ccache/bin:/sbin:/usr/sbin:$PATH:$HOME/.local/bin"
+export PATH="$HOME/.local/bin:$PATH"
 export GOPATH="$HOME/golang"
 
 # vim: ft=sh
