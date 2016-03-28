@@ -1,6 +1,6 @@
 # ~/.tmuxinator/gentoo.yml
 
-name: gentoo
+name: general
 root: ~/
 
 # Optional tmux socket
@@ -22,4 +22,5 @@ windows:
   - editor:
       layout: even-horizontal
       panes:
-        -
+        - clear
+        - clear
