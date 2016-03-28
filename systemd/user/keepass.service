@@ -2,7 +2,9 @@
 Description=Start KeePass password manager
 
 [Service]
+Type=simple
 ExecStart=/bin/keepass
+Restart=always
 
 [Install]
 WantedBy=wm.target
