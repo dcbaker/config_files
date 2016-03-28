@@ -18,5 +18,6 @@ alias ssh-add="ssh-add </dev/null"
 
 # xdg workaround aliases
 alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
+alias pylint="pylint --rcfile $XDG_CONFIG_HOME/pylint/pylintrc"
 
 # vim: ft=sh
