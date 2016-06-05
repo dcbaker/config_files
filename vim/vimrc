@@ -1,4 +1,4 @@
-" XDG stuff
+" XDG stuff {{{1
 set backupdir=$XDG_CACHE_HOME/vim/backup//
 set directory=$XDG_CACHE_HOME/vim/swap//
 set undodir=$XDG_CACHE_HOME/vim/undo//
@@ -6,7 +6,8 @@ set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
 set rtp+=$XDG_CONFIG_HOME/vim
 let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 
-" Use vundle
+" Vundle {{{1
+" Setup {{{2
 filetype off
 
 set rtp+=$XDG_DATA_DIR/vim/bundle/Vundle.vim
@@ -15,7 +16,9 @@ call vundle#begin(expand('$XDG_DATA_DIR').'/vim/bundle')
 " Use vundle to manage plugins
 Plugin 'VundleVim/Vundle.vim'
 
-" Add some plugins
+" Plugins {{{2
+" These add extensive features to vim, not just syntax highlighting or
+" coloschemes
 Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/gundo.vim'
 Plugin 'tmhedberg/SimpylFold'
@@ -27,7 +30,7 @@ Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'thinca/vim-localrc'
 Plugin 'editorconfig/editorconfig-vim'
 
-" Syntax
+" Syntax {{{2
 Plugin 'kurayama/systemd-vim-syntax'
 Plugin 'hdima/python-syntax' 
 Plugin 'tpope/vim-git'
@@ -46,14 +49,16 @@ Plugin 'anntzer/vim-cython.git'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
-" Vim colors
+" Color Schenes {{{2
 Plugin 'nanotech/jellybeans.vim'
 
+" Teardown {{{2
 call vundle#end()
 
 " Make powerline work
 let g:powerline_pycmd="py3"
 
+" Settings {{{1
 set laststatus=2
 set background=dark				" cuz who uses light colored consoles?
 set nowrap						" in general we dont want wrap
@@ -80,33 +85,34 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 syntax on 						" turn syntax highlighting on
 filetype indent plugin on		" do indent and plugins based on filetype
 
+" Folding {{{1
 let g:sh_fold_enabled=3
 let g:vim_markdown_conceal = 0
 
-" Make YCM and UltriSnips live happily
+" Plugin Configuration {{{1
+
+" UltriSnips {{{2
 let g:UltiSnipsExpandTrigger="<Leader>i"
 let g:UltiSnipsListSnippets="<Leader>l"
 
-" Setup syntastic
+" Syntastic {{{2
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 let g:syntastic_aggregate_errors=1
 
-" Don't ask to load ymc_confirm_extra_conf a million times
-let g:ycm_confirm_extra_conf=0
-
-" Make editor config play nice
+" Editor Config {{{2
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
+" pymatcher {{{2
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+" Other {{{1
 " Use cool colors if it's supported by the terminal
 if &term =~ "xterm"
 	set t_Co=256 " Konsole workaround
 	set t_Sb=[4%dm
 	set t_Sf=[3%dm
 endif
-
-" Use fast search
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " Using VIM in tmux can have some unexpected issues.
 " This attempts to fix it
@@ -140,3 +146,5 @@ if has("multi_byte")
   setglobal fileencoding=utf-8
   set fileencodings=utf-8,latin1
 endif
+
+" vim: foldmethod=marker
