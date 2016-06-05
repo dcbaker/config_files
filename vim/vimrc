@@ -29,6 +29,11 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'thinca/vim-localrc'
 Plugin 'editorconfig/editorconfig-vim'
+" Orgmode {{{3
+" and it's dependencies 
+Plugin 'vim-scripts/utl.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'jceb/vim-orgmode'
 
 " Syntax {{{2
 Plugin 'kurayama/systemd-vim-syntax'
@@ -105,6 +110,9 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " pymatcher {{{2
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+" Tagbar {{{2
+nmap <f8> :TagBarToggle<CR>
 
 " Other {{{1
 " Use cool colors if it's supported by the terminal
