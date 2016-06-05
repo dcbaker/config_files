@@ -33,6 +33,7 @@ Plugin 'editorconfig/editorconfig-vim'
 " and it's dependencies 
 Plugin 'vim-scripts/utl.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-speeddating'
 Plugin 'jceb/vim-orgmode'
 
 " Syntax {{{2
