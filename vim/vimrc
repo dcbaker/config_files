@@ -114,7 +114,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " Tagbar {{{2
-nmap <f8> :TagBarToggle<CR>
+nmap <f8> :TagbarToggle<CR>
 
 " Other {{{1
 " Use cool colors if it's supported by the terminal
