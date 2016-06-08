@@ -138,6 +138,8 @@ endif
 
 colorscheme jellybeans
 
+let letlocalleader = '+'
+
 " Change the arrow keys to navigate lines, even if they're wrapped
 map <silent> <Up> gk
 imap <silent> <Up> <C-o>gk
