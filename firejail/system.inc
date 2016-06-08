@@ -1,0 +1,2 @@
+blacklist /proc
+blacklist /sys
