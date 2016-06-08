@@ -29,6 +29,11 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'thinca/vim-localrc'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'dcbaker/vim-abook'
+Plugin 'ynkdir/vim-vimlparser'
+Plugin 'syngan/vim-vimlint.git'
+Plugin 'jamessan/vim-gnupg.git'
+Plugin 'vim-scripts/Align.git'
 " Orgmode {{{3
 " and it's dependencies 
 Plugin 'vim-scripts/utl.vim'
@@ -54,6 +59,8 @@ Plugin 'LaTeX-Box-Team/LaTeX-Box'
 Plugin 'anntzer/vim-cython.git'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'vim-scripts/syntaxudev.vim.git'
+Plugin 'dcbaker/vim-arb_assembly.git'
 Plugin 'chaimleib/vim-renpy'
 
 " Color Schenes {{{2
@@ -105,6 +112,7 @@ let g:UltiSnipsListSnippets="<Leader>l"
 " Syntastic {{{2
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
+let g:syntastic_auto_loc_list=0
 let g:syntastic_aggregate_errors=1
 
 " Editor Config {{{2
