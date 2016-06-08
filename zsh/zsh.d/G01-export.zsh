@@ -12,14 +12,14 @@ export TMUX_TEMPDIR=$XDG_RUNTIME_DIR/tmux
 export PYLINTRC=$XDG_CONFIG_HOME/pylint/pylintrc
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export PYTHON_EGG_CACHE="$XDG_CACHE_HOME"/python-eggs
-export CCACHE_DIR=$XDG_CACHE_HOME/ccache
+export CCACHE_CONFIGPATH=$XDG_CONFIG_HOME/ccache/ccache.conf
 export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuch-config
 export LESSHISTFILE=$XDG_DATA_DIR/less/history
 
 # System sepcific variables
 export EDITOR="/usr/bin/vim"
 export TERM="screen-256color"
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:/lib/ccache/bin:$PATH"
 export GOPATH="$HOME/golang"
 
 # vim: ft=sh
