@@ -1,0 +1,10 @@
+[Unit]
+Description=Dropbox Server
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/bin/firejail --name=dropbox /bin/dropbox
+
+[Install]
+WantedBy=wm.target
