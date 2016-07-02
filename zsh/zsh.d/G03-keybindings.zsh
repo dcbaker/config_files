@@ -1,5 +1,5 @@
 autoload zkbd
-source $XDG_DATA_DIR/zsh/zkbd/$TERM
+source $XDG_DATA_HOME/zsh/zkbd/$TERM
 
 [[ -n ${key[Backspace]} ]]  && bindkey "${key[Backspace]}" backward-delete-char
 [[ -n ${key[Insert]} ]]     && bindkey "${key[Insert]}"    overwrite-mode

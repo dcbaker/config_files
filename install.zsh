@@ -27,16 +27,16 @@ source zsh/zsh.d/G01-export.zsh
 echo "export ZDOTDIR=$XDG_CONFIG_HOME/zsh" > ~/.zshenv
 
 # Create directoires for zsh
-mkdir -p $XDG_DATA_DIR/zsh
-mkdir -p $XDG_DATA_DIR/zsh/zkbd
-mkdir -p $XDG_DATA_DIR/zsh/completions
+mkdir -p $XDG_DATA_HOME/zsh
+mkdir -p $XDG_DATA_HOME/zsh/zkbd
+mkdir -p $XDG_DATA_HOME/zsh/completions
 
 # tmuxinator still has no XDG support
 ln -sf $XDG_CONFIG_HOME/tmuxinator ~/.tmuxinator
 
 # create directories for zsh
 mkdir -p $XDG_CACHE_HOME/vim/{backup,swap,undo}
-mkdir -p $XDG_DATA_DIR/vim/bundle
+mkdir -p $XDG_DATA_HOME/vim/bundle
 
 # python
 mkdir -p $XDG_CACHE_HOME/python-eggs
@@ -45,26 +45,26 @@ mkdir -p $XDG_CACHE_HOME/python-eggs
 mkdir -p $XDG_CACHE_HOME/ccache
 
 # less
-mkdir -p $XDG_DATA_DIR/less
+mkdir -p $XDG_DATA_HOME/less
 
 # git
-mkdir -p $XDG_DATA_DIR/git/templates
+mkdir -p $XDG_DATA_HOME/git/templates
 
 # try to get vundle, you'll need git
-if [[ ! -d $XDG_DATA_DIR/vim/bundle/Vundle.vim ]]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git $XDG_DATA_DIR/vim/bundle/Vundle.vim 1>/dev/null
+if [[ ! -d $XDG_DATA_HOME/vim/bundle/Vundle.vim ]]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git $XDG_DATA_HOME/vim/bundle/Vundle.vim 1>/dev/null
     vim +PluginInstall +qall
 fi
 
 # Add some other helpers
-mkdir -p $XDG_DATA_DIR/repos
+mkdir -p $XDG_DATA_HOME/repos
 mkdir -p $HOME/.local/bin/
-if [[ ! -d $XDG_DATA_DIR/repos/jsontidy ]]; then
-    git clone https://github.com/dcbaker/jsontidy $XDG_DATA_DIR/repos/jsontidy 1>/dev/null
-    ln -s $XDG_DATA_DIR/repos/jsontidy/jsontidy.py $HOME/.local/bin/
+if [[ ! -d $XDG_DATA_HOME/repos/jsontidy ]]; then
+    git clone https://github.com/dcbaker/jsontidy $XDG_DATA_HOME/repos/jsontidy 1>/dev/null
+    ln -s $XDG_DATA_HOME/repos/jsontidy/jsontidy.py $HOME/.local/bin/
 fi
-if [[ ! -d $XDG_DATA_DIR/repos/git-ck ]]; then
-    git clone https://github.com/dcbaker/git-ck $XDG_DATA_DIR/repos/git-ck 1>/dev/null
-    ln -s $XDG_DATA_DIR/repos/git-ck/git-ck $HOME/.local/bin/
-    ln -s $XDG_DATA_DIR/repos/git-ck/zsh/_git-ck $XDG_DATA_DIR/zsh/completions/
+if [[ ! -d $XDG_DATA_HOME/repos/git-ck ]]; then
+    git clone https://github.com/dcbaker/git-ck $XDG_DATA_HOME/repos/git-ck 1>/dev/null
+    ln -s $XDG_DATA_HOME/repos/git-ck/git-ck $HOME/.local/bin/
+    ln -s $XDG_DATA_HOME/repos/git-ck/zsh/_git-ck $XDG_DATA_HOME/zsh/completions/
 fi

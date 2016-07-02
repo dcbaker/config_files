@@ -1,12 +1,12 @@
 # XDG variables
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_DIR=$HOME/.local/share
-export XDG_DATA_DIRS=/usr/local/share:/usr/share
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_DATA_HOMES=/usr/local/share:/usr/share
 export XDG_CONFIG_DIRS=/etc/xdg
 
 # Make various programs play nice with XDG
-export HISTFILE=$XDG_DATA_DIR/zsh/history
+export HISTFILE=$XDG_DATA_HOME/zsh/history
 export TIGRC_USER=$XDG_CONFIG_HOME/tig/tigrc
 export TMUX_TEMPDIR=$XDG_RUNTIME_DIR/tmux
 export PYLINTRC=$XDG_CONFIG_HOME/pylint/pylintrc
@@ -14,7 +14,7 @@ export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 export PYTHON_EGG_CACHE="$XDG_CACHE_HOME"/python-eggs
 export CCACHE_CONFIGPATH=$XDG_CONFIG_HOME/ccache/ccache.conf
 export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuch-config
-export LESSHISTFILE=$XDG_DATA_DIR/less/history
+export LESSHISTFILE=$XDG_DATA_HOME/less/history
 
 # System sepcific variables
 export EDITOR="/usr/bin/vim"

@@ -10,8 +10,8 @@ let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
 " Setup {{{2
 filetype off
 
-set rtp+=$XDG_DATA_DIR/vim/bundle/Vundle.vim
-call vundle#begin(expand('$XDG_DATA_DIR').'/vim/bundle')
+set rtp+=$XDG_DATA_HOME/vim/bundle/Vundle.vim
+call vundle#begin(expand('$XDG_DATA_HOME').'/vim/bundle')
 
 " Use vundle to manage plugins
 Plugin 'VundleVim/Vundle.vim'

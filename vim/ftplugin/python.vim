@@ -11,7 +11,7 @@ setlocal expandtab
 " Syntastic settings
 " Unfortunately we get a choice between python2 and python3.
 " Default to python2, use a local .vimrc to use python3
-let g:syntastic_python_checkers=['python', 'pyflakes', 'pylint']
+let g:syntastic_python_checkers=['python', 'pylint', 'mypy', 'pydocstyle']
 let b:syntastic_python_pylint_args='--rcfile $XDG_CONFIG_HOME/pylint/pylintrc'
 
 " Find an assert that has a paren and remove the parens
