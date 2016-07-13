@@ -69,8 +69,8 @@ if [[ ! -d $XDG_DATA_DIR/repos/git-ck ]]; then
     ln -s $XDG_DATA_DIR/repos/git-ck/zsh/_git-ck $XDG_DATA_DIR/zsh/completions/
 fi
 if [[ ! -d $XDG_DATA_DIR/repos/pip-update ]]; then
-    git clone https://github.com/dcbaker/pip-update.git
-    ln -s $XDG_DATA_DIR/repos/pip-update $HOME/.local/bin/
+    git clone https://github.com/dcbaker/pip-update.git $XDG_DATA_DIR/repos/pip-update
+    ln -s $XDG_DATA_DIR/repos/pip-update/pip-update $HOME/.local/bin/
 fi
 
 curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
