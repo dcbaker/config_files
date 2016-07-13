@@ -72,3 +72,5 @@ if [[ ! -d $XDG_DATA_DIR/repos/pip-update ]]; then
     git clone https://github.com/dcbaker/pip-update.git
     ln -s $XDG_DATA_DIR/repos/pip-update $HOME/.local/bin/
 fi
+
+curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
