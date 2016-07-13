@@ -73,4 +73,6 @@ if [[ ! -d $XDG_DATA_DIR/repos/pip-update ]]; then
     ln -s $XDG_DATA_DIR/repos/pip-update/pip-update $HOME/.local/bin/
 fi
 
-curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+if [[ ! -d $HOME/.pyenv ]]; then
+    curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+fi
