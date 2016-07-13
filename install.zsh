@@ -68,3 +68,7 @@ if [[ ! -d $XDG_DATA_DIR/repos/git-ck ]]; then
     ln -s $XDG_DATA_DIR/repos/git-ck/git-ck $HOME/.local/bin/
     ln -s $XDG_DATA_DIR/repos/git-ck/zsh/_git-ck $XDG_DATA_DIR/zsh/completions/
 fi
+if [[ ! -d $XDG_DATA_DIR/repos/pip-update ]]; then
+    git clone https://github.com/dcbaker/pip-update.git
+    ln -s $XDG_DATA_DIR/repos/pip-update $HOME/.local/bin/
+fi
