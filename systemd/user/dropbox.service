@@ -5,7 +5,7 @@ After=network-online.target
 
 [Service]
 Restart=on-failure
-ExecStart=/bin/firejail --name=dropbox /bin/dropbox
+ExecStart=/bin/firejail /bin/dropbox
 
 [Install]
 WantedBy=wm.target
