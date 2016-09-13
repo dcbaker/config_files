@@ -80,3 +80,8 @@ trashrc
 user-dirs.dirs
 user-dirs.locale
 vlc
+i3/
+i3status/
+sway/
+YKPersonalizationrc
+kwinrulesrc.*
