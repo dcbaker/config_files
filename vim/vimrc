@@ -34,6 +34,8 @@ Plugin 'ynkdir/vim-vimlparser'
 Plugin 'syngan/vim-vimlint.git'
 Plugin 'jamessan/vim-gnupg.git'
 Plugin 'vim-scripts/Align.git'
+Plugin 'chrisbra/NrrwRgn'
+Plugin 'mkomitee/vim-gf-python'
 " Orgmode {{{3
 " and it's dependencies 
 Plugin 'vim-scripts/utl.vim'
@@ -62,6 +64,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-scripts/syntaxudev.vim.git'
 Plugin 'dcbaker/vim-arb_assembly.git'
 Plugin 'chaimleib/vim-renpy'
+Plugin 'isundil/vim-irssi-syntax'
 
 " Color Schenes {{{2
 Plugin 'nanotech/jellybeans.vim'
@@ -89,7 +92,6 @@ set shiftwidth=4				" set a reasonable shiftwidth, 8 is not reasonable
 set backspace=indent,eol,start	" make backspace work like a reasonable system
 set history=50					" keep only 50 lines of history
 set hlsearch					" search with hilight
-set omnifunc=					" do not use omnifunc
 set foldmethod=syntax 			" Syntax folding by default, change it in the ftplugins
 set exrc                        " Load project .vimrc files
 set secure                      " disable unsafe commands in project .vimrc
@@ -146,7 +148,7 @@ endif
 
 colorscheme jellybeans
 
-let letlocalleader = '+'
+let g:letlocalleader = '+'
 
 " Change the arrow keys to navigate lines, even if they're wrapped
 map <silent> <Up> gk
