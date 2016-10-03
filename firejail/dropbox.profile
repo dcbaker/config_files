@@ -1,5 +1,7 @@
 include /etc/firejail/dropbox.profile
-include ${HOME}/.config/firejail/system.inc
+
+blacklist /sys
+read-only /proc
 
 name dropbox
 
