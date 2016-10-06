@@ -4,8 +4,9 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
+PIDFile=/home/dylan/.local/sandbox/dropbox/.dropbox/dropbox.pid
 Restart=on-failure
-ExecStart=/bin/firejail --name=dropbox /bin/dropbox
+ExecStart=/bin/firejail /bin/dropbox
 
 [Install]
 WantedBy=wm.target

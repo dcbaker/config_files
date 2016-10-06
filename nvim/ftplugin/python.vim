@@ -8,10 +8,9 @@ setlocal textwidth=79
 setlocal smarttab
 setlocal expandtab
 
+let g:python_highlight_all = 1
+
 " Syntastic settings
-" Unfortunately we get a choice between python2 and python3.
-" Default to python2, use a local .vimrc to use python3
-let g:syntastic_python_checkers=['python', 'pylint', 'mypy', 'pydocstyle']
 let b:syntastic_python_pylint_args='--rcfile $XDG_CONFIG_HOME/pylint/pylintrc'
 
 " Find an assert that has a paren and remove the parens

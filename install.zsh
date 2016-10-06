@@ -34,10 +34,6 @@ mkdir -p $XDG_DATA_HOME/zsh/completions
 # tmuxinator still has no XDG support
 ln -sf $XDG_CONFIG_HOME/tmuxinator ~/.tmuxinator
 
-# create directories for zsh
-mkdir -p $XDG_CACHE_HOME/vim/{backup,swap,undo}
-mkdir -p $XDG_DATA_HOME/vim/bundle
-
 # python
 mkdir -p $XDG_CACHE_HOME/python-eggs
 
@@ -50,10 +46,13 @@ mkdir -p $XDG_DATA_HOME/less
 # git
 mkdir -p $XDG_DATA_HOME/git/templates
 
+# nvim
+mkdir -p $XDG_CACHE_HOME/nvim/{backup,swap,undo}
+
 # try to get vundle, you'll need git
-if [[ ! -d $XDG_DATA_HOME/vim/bundle/Vundle.vim ]]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git $XDG_DATA_HOME/vim/bundle/Vundle.vim 1>/dev/null
-    vim +PluginInstall +qall
+if [[ ! -d $XDG_DATA_DIR/nvim/bundle/Vundle.vim ]]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git $XDG_DATA_DIR/nvim/bundle/Vundle.vim 1>/dev/null
+    nvim +PluginInstall +qall
 fi
 
 # Add some other helpers

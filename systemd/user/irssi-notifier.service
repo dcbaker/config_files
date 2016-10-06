@@ -1,0 +1,8 @@
+[Unit]
+Description=Irssi Gnome Notifier
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Restart=on-failure
+ExecStart=/home/dylan/.local/libexec/notify-listener.py

@@ -1,17 +1,14 @@
-" XDG stuff {{{1
-set backupdir=$XDG_CACHE_HOME/vim/backup//
-set directory=$XDG_CACHE_HOME/vim/swap//
-set undodir=$XDG_CACHE_HOME/vim/undo//
-set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
-set rtp+=$XDG_CONFIG_HOME/vim
-let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc"
+" XDG sutff {{{1
+set backupdir=$XDG_CACHE_HOME/nvim/backup//
+set directory=$XDG_CACHE_HOME/nvim/swap//
+set undodir=$XDG_CACHE_HOME/nvim/undo//
 
 " Vundle {{{1
 " Setup {{{2
 filetype off
 
-set rtp+=$XDG_DATA_HOME/vim/bundle/Vundle.vim
-call vundle#begin(expand('$XDG_DATA_HOME').'/vim/bundle')
+set rtp+=$XDG_DATA_DIR/nvim/bundle/Vundle.vim
+call vundle#begin(expand('$XDG_DATA_DIR').'/nvim/bundle')
 
 " Use vundle to manage plugins
 Plugin 'VundleVim/Vundle.vim'
@@ -19,21 +16,20 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins {{{2
 " These add extensive features to vim, not just syntax highlighting or
 " coloschemes
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/gundo.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'FelikZ/ctrlp-py-matcher'
-Plugin 'thinca/vim-localrc'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'dcbaker/vim-abook'
-Plugin 'ynkdir/vim-vimlparser'
-Plugin 'syngan/vim-vimlint.git'
 Plugin 'jamessan/vim-gnupg.git'
 Plugin 'vim-scripts/Align.git'
+Plugin 'chrisbra/NrrwRgn'
+Plugin 'davidhalter/jedi-vim.git'
 " Orgmode {{{3
 " and it's dependencies 
 Plugin 'vim-scripts/utl.vim'
@@ -62,48 +58,44 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-scripts/syntaxudev.vim.git'
 Plugin 'dcbaker/vim-arb_assembly.git'
 Plugin 'chaimleib/vim-renpy'
+Plugin 'isundil/vim-irssi-syntax'
+Plugin 'dcbaker/vim-pybugz'
+Plugin 'dcbaker/vim-firejail'
 
 " Color Schenes {{{2
 Plugin 'nanotech/jellybeans.vim'
 
 " Teardown {{{2
 call vundle#end()
-
-" Make powerline work
-let g:powerline_pycmd="py3"
+filetype plugin indent on
 
 " Settings {{{1
-set laststatus=2
 set background=dark				" cuz who uses light colored consoles?
 set nowrap						" in general we dont want wrap
 set nopaste						" dont screw with formatting if not pasting
 set number						" very useful
 set ruler						" ^this
-set nocompatible				" this is vim, not vi
-set modeline					" this can be a security problem, but its dang useful
-set autoindent					" who doesn't like autoindent
 set autowrite					" autowrite on next, I forget a lot
+set autoindent
 set expandtab					" expand tabs to spaces
 set tabstop=4					" set a resonable tabstop, 8 is not reasonable
 set shiftwidth=4				" set a reasonable shiftwidth, 8 is not reasonable
-set backspace=indent,eol,start	" make backspace work like a reasonable system
-set history=50					" keep only 50 lines of history
-set hlsearch					" search with hilight
-set omnifunc=					" do not use omnifunc
 set foldmethod=syntax 			" Syntax folding by default, change it in the ftplugins
-set exrc                        " Load project .vimrc files
+set modeline					" this can be a security problem, but its dang useful
 set secure                      " disable unsafe commands in project .vimrc
-set backup " create backups, but put them in a backup folder
+set backup                      " create backups, but put them in a backup folder
+set mouse-=a                    " Stop using the dang mouse
 " This allows for visual identification of whitespace
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-syntax on 						" turn syntax highlighting on
-filetype indent plugin on		" do indent and plugins based on filetype
 
 " Folding {{{1
 let g:sh_fold_enabled=3
 let g:vim_markdown_conceal = 0
 
 " Plugin Configuration {{{1
+
+" Airline {{{2
+let g:airline_powerline_fonts = 1
 
 " UltriSnips {{{2
 let g:UltiSnipsExpandTrigger="<Leader>i"
@@ -146,25 +138,12 @@ endif
 
 colorscheme jellybeans
 
-let letlocalleader = '+'
+let g:letlocalleader = '+'
 
 " Change the arrow keys to navigate lines, even if they're wrapped
 map <silent> <Up> gk
 imap <silent> <Up> <C-o>gk
 map <silent> <Down> gj
 imap <silent> <Down> <C-o>gj
-
-" If it's possible switch to UTF-n encoding
-" For using larger than UTF-8 we will need the bomb (which turns on the BOM)
-" however, we don't want to use BOM on UTF-8, since script files with #!
-" will break badly with a BOM
-if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
-  set encoding=utf-8
-  setglobal fileencoding=utf-8
-  set fileencodings=utf-8,latin1
-endif
 
 " vim: foldmethod=marker
