@@ -27,6 +27,7 @@ gtkrc
 gtkrc-2.0
 i3/
 i3status/
+irssi
 kactivitymanagerdrc
 kate*
 kcmfonts
@@ -84,4 +85,6 @@ systemsettingsrc
 trashrc
 user-dirs.dirs
 user-dirs.locale
+vim
 vlc
+wireshark
