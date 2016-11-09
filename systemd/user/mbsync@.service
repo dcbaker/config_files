@@ -1,7 +1,7 @@
 [Unit]
 Description=Sync with IMAP server: %i
 Wants=network-online.target
-After=network-online.target
+After=network-online.target network.target
 
 [Service]
 Type=oneshot
