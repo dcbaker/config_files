@@ -1,7 +1,7 @@
 [Unit]
 Description=Irssi Gnome Notifier
 Wants=network-online.target
-After=network-online.target
+After=network-online.target network.target
 
 [Service]
 Restart=on-failure
