@@ -19,6 +19,7 @@
 	send = send-email --annotate --find-renames --find-copies
 	send-cherry = "!git send HEAD~`git cherry master | wc -l`"
 	chp = cherry-pick
+	s = series
 
 [color]
 	ui = false
