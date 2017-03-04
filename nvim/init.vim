@@ -5,7 +5,7 @@ set rtp^=/usr/share/vim/vimfiles/
 " Setup {{{2
 filetype off
 
-set rtp+=$XDG_DATA_DIR/nvim/bundle/Vundle.vim
+set rtp+=$XDG_DATA_HOME/nvim/bundle/Vundle.vim
 call vundle#begin(expand('$XDG_DATA_DIR').'/nvim/bundle')
 
 " Use vundle to manage plugins
