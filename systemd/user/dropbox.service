@@ -1,7 +1,7 @@
 [Unit]
 Description=Dropbox Server
 Wants=network-online.target
-After=network-online.target network.target
+After=network-online.target
 
 [Service]
 ExecStart=/bin/firejail /bin/dropbox
@@ -9,6 +9,7 @@ Restart=on-failure
 # We can't track the pid file, since it's inside the sandbox and has the wrong
 # process ID.
 #PIDFile=/home/dylan/.local/sandbox/dropbox/.dropbox/dropbox.pid
+ExecStopPost=/bin/rm /home/dylan/.local/sandbox/dropbox/.dropbox/dropbox.pid
 
 [Install]
 WantedBy=wm.target
