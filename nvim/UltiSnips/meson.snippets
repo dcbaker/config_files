@@ -1,0 +1,53 @@
+snippet custom_target
+${1} = custom_target(
+  '$1',
+  input : ${2},
+  output : ${3},
+  command : [${4}, '${5:@INPUT@}'],
+)
+endsnippet
+
+snippet static_library
+lib${1} = static_library(
+  '$1',
+  ${2},
+  ${3:include_directories : }${4}
+  ${5:link_with : }${6}
+)
+endsnippet
+
+snippet shared_library
+lib${1} = shared_library(
+  '$1',
+  ${2},
+  ${3:include_directories : }${4}
+  ${5:link_with : }${6}
+)
+endsnippet
+
+snippet shared_module
+lib${1} = shared_module(
+  '$1',
+  ${2},
+  ${3:include_directories : }${4}
+  ${5:link_with : }${6}
+)
+endsnippet
+
+snippet executable
+${1} = executable(
+  ${2},
+  ${3},
+  ${4:dependencies : }${5}
+  ${5:include_directories : }${6}
+  ${7:link_with : }${7}
+)
+endsnippet
+
+snippet generator
+${1} = generator(
+  [${2}],
+  output : ['${3}'],
+  arguments : ['${4}'],
+)
+endsnippet

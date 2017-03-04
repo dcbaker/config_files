@@ -1,6 +1,5 @@
 snippet LGPL3-unicode
 # encoding=utf-8
-# ${1}
 # Copyright © `!v strftime("%Y")`, ${2:Dylan Baker}, All rights reserved.
 
 # This library is free software; you can redistribute it and/or
@@ -18,7 +17,6 @@ snippet LGPL3-unicode
 endsnippet
 
 snippet LGPL3-plain
-# ${1}
 # Copyright (c) `!v strftime("%Y")`, ${2:Dylan Baker}, All rights reserved.
 
 # This library is free software; you can redistribute it and/or
@@ -37,7 +35,6 @@ endsnippet
 
 snippet LGLP2-unicode
 # encoding=utf-8
-# ${1}
 # Copyright © `!v strftime("%Y")` ${2:Dylan Baker}
 
 # This library is free software; you can redistribute it and/or
@@ -57,7 +54,6 @@ snippet LGLP2-unicode
 endsnippet
 
 snippet LGLP2-plain
-# ${1}
 # Copyright (c) `!v strftime("%Y")` ${2:Dylan Baker}
 
 # This library is free software; you can redistribute it and/or
@@ -211,4 +207,23 @@ snippet future_all
 from __future__ import (
     absolute_import, division, print_function, unicode_literals
 )
+endsnippet
+
+snippet mako-except
+except:
+    import sys
+	from mako import exceptions
+	print(exceptions.text_error_template().render(), file=sys.stderr)
+	sys.exit(1)
+endsnippet
+
+snippet argparse
+parser = argparse.ArgumentParser(${1})
+parser.add_argument(${2})
+args = parser.parse_args()
+endsnippet
+
+snippet withopen
+with open(${1}, '${2:r}') as f:
+	${3}
 endsnippet
