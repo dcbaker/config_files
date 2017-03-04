@@ -32,7 +32,9 @@ mkdir -p $XDG_DATA_HOME/zsh/zkbd
 mkdir -p $XDG_DATA_HOME/zsh/completions
 
 # tmuxinator still has no XDG support
-ln -sf $XDG_CONFIG_HOME/tmuxinator ~/.tmuxinator
+if [[ ! -e ~/.tmuxinator ]]; then
+    ln -sf $XDG_CONFIG_HOME/tmuxinator ~/.tmuxinator
+fi
 
 # python
 mkdir -p $XDG_CACHE_HOME/python-eggs
