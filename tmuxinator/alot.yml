@@ -1,7 +1,7 @@
-# ~/.tmuxinator/mesa.yml
+# ~/.tmuxinator/alot.yml
 
-name: mesa
-root: ~/source/mesa/
+name: alot
+root: ~/source/alot
 
 # Optional tmux socket
 # socket_name: foo
@@ -10,14 +10,22 @@ root: ~/source/mesa/
 # pre: sudo /etc/rc.d/mysqld start
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: rbenv shell 2.0.0-p247
-#pre_window: pyenv activate mesa-gen-2.7
+pre_window: pyenv activate alot
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
-tmux_options: -f $XDG_CONFIG_HOME/tmux/tmux.conf
+tmux_options: -f ~/.config/tmux/tmux.conf
 
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
 # tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t alot
 
 windows:
   - editor:
@@ -25,8 +33,3 @@ windows:
       panes:
         - clear
         - clear
-  - test:
-      layout: even-horizontal
-      panes:
-          - clear
-          - clear
