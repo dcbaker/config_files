@@ -36,7 +36,10 @@
 
 [sendemail]
 	confirm = auto
-	; set more stuff
+	assume8bitEncoding = true
+	compose-encoding = UTF-8
+	transfer-encoding = 8bit
+    suppresscc = sob
 
 [push]
 	default = upstream
@@ -46,5 +49,11 @@
 
 [rebase]
 	autostash = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 
 ; vim: filetype=gitconfig noexpandtab
