@@ -1,7 +1,5 @@
-" XDG sutff {{{1
-set backupdir=$XDG_CACHE_HOME/nvim/backup//
-set directory=$XDG_CACHE_HOME/nvim/swap//
-set undodir=$XDG_CACHE_HOME/nvim/undo//
+" Include vim syntax/etc {{{1
+set rtp^=/usr/share/vim/vimfiles/
 
 " Vundle {{{1
 " Setup {{{2
@@ -19,7 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-fugitive'
-Plugin 'sjl/gundo.vim'
+Plugin 'simnalamburt/vim-mundo'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
@@ -30,6 +28,9 @@ Plugin 'jamessan/vim-gnupg.git'
 Plugin 'vim-scripts/Align.git'
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'davidhalter/jedi-vim.git'
+Plugin 'racer-rust/vim-racer'
+Plugin 'tpope/vim-unimpaired'
+
 " Orgmode {{{3
 " and it's dependencies 
 Plugin 'vim-scripts/utl.vim'
@@ -70,6 +71,8 @@ call vundle#end()
 filetype plugin indent on
 
 " Settings {{{1
+set undofile
+set undodir=$XDG_CACHE_HOME/nvim/undo//
 set background=dark				" cuz who uses light colored consoles?
 set nowrap						" in general we dont want wrap
 set nopaste						" dont screw with formatting if not pasting
@@ -84,6 +87,8 @@ set foldmethod=syntax 			" Syntax folding by default, change it in the ftplugins
 set modeline					" this can be a security problem, but its dang useful
 set secure                      " disable unsafe commands in project .vimrc
 set backup                      " create backups, but put them in a backup folder
+set backupdir=$XDG_CACHE_HOME/nvim/backup//
+set directory=$XDG_CACHE_HOME/nvim/swap//
 set mouse-=a                    " Stop using the dang mouse
 " This allows for visual identification of whitespace
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
@@ -115,6 +120,9 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " Tagbar {{{2
 nmap <f8> :TagbarToggle<CR>
+
+" Mundo {{{2
+let g:mundo_prefer_python3 = 1
 
 " Other {{{1
 " Use cool colors if it's supported by the terminal
