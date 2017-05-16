@@ -57,6 +57,11 @@ if [[ ! -d $XDG_DATA_HOME/nvim/bundle/Vundle.vim ]]; then
     nvim +PluginInstall +qall
 fi
 
+# Try to get antigen, you'll need git for this too
+if [[ ! -d $XDG_DATA_HOME/zsh/bundle ]]; then
+    git clone https://github.com/zsh-users/antigen.git $XDG_DATA_HOME/zsh/bundle/antigen.git 1>/dev/null
+fi
+
 # Add some other helpers
 mkdir -p $XDG_DATA_HOME/repos
 mkdir -p $HOME/.local/bin/
