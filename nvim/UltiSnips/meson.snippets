@@ -1,9 +1,12 @@
+extends hash-comment
+
 snippet custom_target
 ${1} = custom_target(
   '$1',
   input : ${2},
   output : ${3},
-  command : [${4}, '${5:@INPUT@}'],
+  command : [${4}],
+  capture : true,
 )
 endsnippet
 
@@ -36,9 +39,9 @@ endsnippet
 
 snippet executable
 ${1} = executable(
+  '$1',
   ${2},
-  ${3},
-  ${4:dependencies : }${5}
+  ${3:dependencies : }${4}
   ${5:include_directories : }${6}
   ${7:link_with : }${7}
 )
@@ -50,4 +53,39 @@ ${1} = generator(
   output : ['${3}'],
   arguments : ['${4}'],
 )
+endsnippet
+
+snippet subdir
+subdir('${1}')
+endsnippet
+
+snippet declare_dependency
+${1} = declare_dependency(
+  dependencies : ${2},
+  include_directories : ${3},
+)
+endsnippet
+
+snippet add_project_arguments
+add_project_arguments(${1}, language : ['${2}'])
+endsnippet
+
+snippet vcs_tag
+${1} = vcs_tag(
+  intput : ${2},
+  output : ${3},
+  fallback : ${4:meson.project_version()}
+)
+endsnippet
+
+snippet include_directories
+include_directories
+endsnippet
+
+snippet @INPUT@
+@INPUT${1}@
+endsnippet
+
+snippet @OUTPUT@
+@OUTPUT${1}@
 endsnippet
