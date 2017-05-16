@@ -62,6 +62,7 @@ Plugin 'chaimleib/vim-renpy'
 Plugin 'isundil/vim-irssi-syntax'
 Plugin 'dcbaker/vim-pybugz'
 Plugin 'dcbaker/vim-firejail'
+Plugin 'PProvost/vim-ps1.git'
 
 " Color Schenes {{{2
 Plugin 'nanotech/jellybeans.vim'
