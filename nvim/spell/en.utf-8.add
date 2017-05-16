@@ -32,3 +32,14 @@ inline
 vim
 errbacks
 errback
+backends
+macOS
+autotools
+cmake
+editorconfig
+uninstall
+symlinking
+hardlinks
+symlinks
+systemd
+uninstalled
