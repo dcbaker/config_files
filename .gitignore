@@ -1,5 +1,6 @@
 .exercism.json
 .mono
+Electron
 KeePass
 QtProject.conf
 Trolltech.conf
@@ -11,6 +12,7 @@ baloofilerc
 bluedevilglobalrc
 calibre
 chromium
+configstore
 dconf
 deluge
 dolphinrc
@@ -23,6 +25,7 @@ evolution
 fontconfig/
 freshwrapper-data
 gnome-control-center
+goa-1.0
 google-chrome
 gtk-2.0
 gtk-3.0
@@ -73,7 +76,10 @@ mbsync
 menus/
 mimeapps.list
 monitors.xml
+nuvolaplayer3
 piglit.conf
+piglit.conf
+pitivi
 plasma-localerc
 plasma-org.kde.plasma.desktop-appletsrc*
 plasmashellrc
@@ -87,6 +93,7 @@ startupconfigfiles
 startupconfigkeys
 sway/
 systemsettingsrc
+totem
 trashrc
 user-dirs.dirs
 user-dirs.locale
