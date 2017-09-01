@@ -22,9 +22,9 @@ endsnippet
 snippet mako-except
 except:
     import sys
-	from mako import exceptions
-	print(exceptions.text_error_template().render(), file=sys.stderr)
-	sys.exit(1)
+        from mako import exceptions
+        print(exceptions.text_error_template().render(), file=sys.stderr)
+        sys.exit(1)
 endsnippet
 
 snippet argparse
@@ -35,5 +35,30 @@ endsnippet
 
 snippet withopen
 with open(${1}, '${2:r}') as f:
-	${3}
+    ${3}
+endsnippet
+
+snippet setuppy
+import os
+from setuptools import setup, find_packages
+
+def read(fname):
+    with open(os.path.join(os.path.dirname(__file__), fname)) as f:
+        return f.read()
+
+setup(
+    name = '${1}',
+    version = '0.0.1',
+    author = 'Dylan Baker',
+    author_email = 'dylan@pnwbakers.com',
+    description = ('${2}'),
+    license = '${3:GPL3}',
+    keywords = '${4}',
+    url = 'https://www.github.com/dcbaker/${5}',
+    packages=find_packages(exclude=['tests']),
+    long_description=read('README.rst'),
+    classifiers=[
+        ${6}
+    ],
+)
 endsnippet
