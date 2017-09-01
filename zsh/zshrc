@@ -28,7 +28,6 @@ fpath=($XDG_CONFIG_HOME/zsh/completions $XDG_DATA_HOME/zsh/completions $fpath)
 
 # Use menues for completion
 autoload -Uz compinit && compinit
-autoload -Uz bashcompinit && bashcompinit
 zstyle ':completion:*' menu select
 
 # auto-complete aliases
