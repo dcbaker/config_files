@@ -14,7 +14,7 @@ for l in G L; do
 		# Normally placing the regex string inside '' would make everything
 		# happy, but the $l makes this impossible, so escaping a lot of
 		# characters is the only choice
-		[[ "${file}" =~ .\*/"$l"[0-9].\*\.zsh ]] && source $file
+		[[ "${file}" =~ .\*/"$l"[0-9].\*\.zsh\$ ]] && source $file
 	done
 done
 
