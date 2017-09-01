@@ -21,4 +21,7 @@ export TERM="screen-256color"
 export PATH="$HOME/.local/bin:/lib/ccache/bin:$PATH"
 export GOPATH="$HOME/golang"
 
+# Make tmux not overwrite window names
+export DISABLE_AUTO_TITLE=true
+
 # vim: ft=sh
