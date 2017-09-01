@@ -78,6 +78,10 @@ if [[ ! -d $XDG_DATA_HOME/repos/pip-update ]]; then
     git clone https://github.com/dcbaker/pip-update.git $XDG_DATA_HOME/repos/pip-update
     ln -s $XDG_DATA_HOME/repos/pip-update/pip-update $HOME/.local/bin/
 fi
+if [[ ! -d $XDG_DATA_HOME/repos/tig-rebase ]]; then
+    git clone https://github.com/Nattfarinn/tig-rebase.git $XDG_DATA_HOME/repos/tig-rebase
+    ln -s $XDG_DATA_HOME/repos/tig-rebase/tig-rebase.sh $HOME/.local/bin/tig-rebase
+fi
 
 if [[ ! -d $HOME/.pyenv ]]; then
     curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
