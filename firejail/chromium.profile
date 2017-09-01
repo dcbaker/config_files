@@ -1,5 +1,45 @@
+# Persistent global definitions go here
+include /etc/firejail/globals.local
+
+# This file is overwritten during software install.
+# Persistent customizations should go in a .local file.
+include /etc/firejail/chromium.local
+
+# Chromium browser profile
+noblacklist ~/.config/chromium
+noblacklist ~/.cache/chromium
+noblacklist ~/.pki
+include /etc/firejail/disable-common.inc
+include /etc/firejail/disable-programs.inc
+# chromium is distributed with a perl script on Arch
+# include /etc/firejail/disable-devel.inc
+
+whitelist ~/Downloads
+noexec ~/Downloads
+mkdir ~/.config/chromium
+whitelist ~/.config/chromium
+mkdir ~/.cache/chromium
+whitelist ~/.cache/chromium
+mkdir ~/.pki
+whitelist ~/.pki
+
+# specific to Arch
+whitelist ~/.config/chromium-flags.conf
+
+include /etc/firejail/whitelist-common.inc
+
+caps.keep sys_chroot,sys_admin
+#ipc-namespace
+netfilter
+nogroups
+shell none
+
+private-tmp
+
+noexec ${HOME}
+noexec /tmp
+
 # Extended firefox profile to include extra stuff
-include /etc/firejail/chromium.profile
 mkdir ~/.local/sandbox/chromium
 
 private ~/.local/sandbox/chromium
